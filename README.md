@@ -23,3 +23,23 @@ This app is for any user, with logged in users being able to access more feature
 Landing/Login Page
 ------------------
 <img src="readme-images/Landing_ Login.jpg" />
+
+Sign Up Page
+------------------
+<img src="readme-images/Sign Up.jpg" />
+
+Song Maker Page
+------------------
+<img src="readme-images/Song Maker.jpg" />
+
+Home Page
+------------------
+<img src="readme-images/Home.jpg" />
+
+Saved Loops Page
+------------------
+<img src="readme-images/Saved Loops.jpg" />
+
+Social Page
+------------------
+<img src="readme-images/Social.jpg" />
