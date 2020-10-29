@@ -22,3 +22,4 @@ This app is for any user, with logged in users being able to access more feature
 
 Landing/Login Page
 ------------------
+(https://github.com/ashen-develops/Wonderful-Music-Contraption/blob/main/readme-images/Landing_%20Login.jpg)
