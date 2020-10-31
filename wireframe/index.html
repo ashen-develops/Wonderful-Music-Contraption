@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Doc Ashen's</h1>
         <h2>Wonderful Music Contraption</h2>
-        <nav>
+        <!-- <nav>
             <a href="home.html">Home</a>
             <a href="saved.html">My Loops</a>
             <a href="social.html">Social Hub</a>
             <a href="song.html">The Machine</a>
-        </nav>
+        </nav> -->
     </header>
 
     <main>
-        <div class="signbtn">
+        <div class="signup">
             <!-- on click in JS this button will take you to the sign up page -->
-            <button>Sign Up</button>
+            <button class="signbtn">Sign Up</button>
         </div>
 
-        <div class="trybtn">
+        <div class="try">
             <!-- on click in JS this button will take you to the song maker page -->
-            <button>Try out The Wonderous Contraption</button>
+            <button class="trybtn">Try out The Wonderous Contraption</button>
         </div>
 
         <div class="login-form">
@@ -35,7 +37,19 @@
                 <input type="text" id="user" name="user">
                 <label for="password">Password:</label>
                 <input type="text" id="password" name="password">
-                <input type="submit" value="Login">
+                <!-- <input class="submit" type="submit" value="Login"> -->
+        <!-- THIS SVG LINE NEEDS SOME REFINING still have it kind of shakey on the rounded corners -->
+                <div class="container">
+                    <div class="center">
+                      <button class="btn">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                          <polyline points="170,1 170,2 172,3 174,4 175,5 177,6 179,14 179,48 177,52 175,55 174,56 172,58 170,58, 168,59 13,60 5,55 3,53 1,50 0,14 5,5 10,2 13,1 170,1" class="bg-line" />
+                          <polyline points="170,1 170,2 172,3 174,4 175,5 177,6 179,14 179,48 177,52 175,55 174,56 172,58 170,58, 168,59 13,60 5,55 3,53 1,50 0,14 5,5 10,2 13,1 170,1" class="hl-line" />
+                        </svg>
+                        <span>LOGIN</span>
+                      </button>
+                    </div>
+                  </div>
             </form>
         </div>
     </main>
