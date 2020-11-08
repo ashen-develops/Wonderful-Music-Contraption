@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./style.css";
+import Landing from './Landing'
+// import MultiPlayer from "./MultiPlayer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Landing />
     </div>
+    // // <div className="App">
+    // //   <MultiPlayer
+    // //     urls={[
+    // //       "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    // //       "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    // //       "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+    // //     ]}
+    // //   />
+    // // </div>
+    
+
+    //   <footer>
+    //     <p>contact me info and stuff</p>
+    //   </footer>
+      
+    // </div>
   );
 }
 
