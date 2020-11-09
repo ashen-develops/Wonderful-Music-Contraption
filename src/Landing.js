@@ -30,21 +30,13 @@ class Landing extends Component {
     render() {
         return(
             <div className="Landing">
-                <header>
-                <h1>Doc Ashen's</h1>
-                <h2>Wonderful Music Contraption</h2>
-                    {/* <nav>
-                    <a href="home.html">Home</a>
-                    <a href="saved.html">My Loops</a>
-                    <a href="social.html">Social Hub</a>
-                    <a href="song.html">The Machine</a>
-                    </nav> */}
-                </header>
 
                 <main>
                     <div class="signup">
                         {/* <!-- on click in JS this button will take you to the sign up page --> */}
-                        <button class="signbtn">Sign Up</button>
+                        <Link to="/signup">
+                            <button class="signbtn">Sign Up</button>
+                        </Link>
                     </div>
 
                     <div class="try">
