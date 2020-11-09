@@ -38,6 +38,7 @@
 svg {
     position: absolute;
     left: 0;
+    right: 0;
     top: 0;
     fill: none;
     stroke: rgb(237, 174, 73);
