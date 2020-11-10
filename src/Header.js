@@ -15,23 +15,23 @@ class Header extends Component {
                     <div className="navBar">
                         <button 
                             onClick={this.Toggle}
-                            class="menu">
+                            className="menu">
                         </button>
                         <ul className={this.state.toggle ?  "show-nav" : "nav-links"}>
                             <li>
-                                <Link class="link" to="/home">Home</Link>
+                                <Link className="link" to="/home">Home</Link>
                             </li>
                             <li>
-                                <Link class="link" to="/contraption">The Machine</Link>
+                                <Link className="link" to="/contraption">The Machine</Link>
                             </li>
                             <li>
-                                <Link class="link" to="/loops">My Loops</Link>
+                                <Link className="link" to="/loops">My Loops</Link>
                             </li>
                             <li>
-                                <Link class="link" to="/social">Social Hub</Link>
+                                <Link className="link" to="/social">Social Hub</Link>
                             </li>
                             <li>
-                                <Link class="link" to="/support">Support</Link>
+                                <Link className="link" to="/support">Support</Link>
                             </li>
                         </ul>
                     </div>

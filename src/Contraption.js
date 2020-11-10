@@ -8,7 +8,7 @@ function Contraption() {
             <h3>Start By Dragging and Dropping Some Beats</h3>
         </div>
 
-        <div class="loop-selection">
+        <div className="loop-selection">
             <div>
                 <select>
                     <option value="BEATS">Beats</option>

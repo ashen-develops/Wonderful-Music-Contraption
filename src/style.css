@@ -106,7 +106,7 @@ header .show-nav {
   
 svg {
     position: absolute;
-    left: 0;
+    left: 5px;
     right: 0;
     top: 0;
     fill: none;
@@ -241,7 +241,7 @@ input{
     margin: 15px 0px;
     font-size: 13px;
 }
-main button {
+main a.abtn {
     display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
@@ -256,10 +256,10 @@ main button {
     box-shadow: 5px 9px rgb(205, 83, 52, 0.4);
   }
   
-main button:hover {
+main a.abtn:hover {
     background-color: rgb(213, 223, 229)}
   
-main button:active {
+main a.abtn:active {
     background-color: rgb(213, 223, 229);
     box-shadow: 3px 5px rgba(104, 38, 21, 0.7);
     transform: translateY(4px);
