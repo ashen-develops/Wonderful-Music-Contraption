@@ -1,74 +1,49 @@
 import React from 'react';
+import * as Tone from 'tone';
+import { Player } from 'tone';
 
 function Contraption() {
+    // const twoBopB = new Tone.Player('./Media/Backing/2bop_back160.mp3').toDestination();
+    // twoBopB.autostart = true;
+    // twoBopB.loop = true;
     return(
     <div>
     <main>
         <div>
             <h3>Start By Dragging and Dropping Some Beats</h3>
         </div>
+        <div className="music-box">
+            <div>
+                <button 
+                className="twobeat"
+                // onClick={twoBopB}
+                // on click add bop back to the loop (2bop_back160)
+                ></button>
+                <button 
+                className="twobeat"
+                // on click add bop back to the loop (2bop_back160)
+                ></button>
+            </div>
+            <div>
+                <button 
+                className="onebeat"
+                // on click add bongo beat to the loop (bongo2_beat160)
+                >    
+                </button>
+                <button 
+                className="onebeat"
+                // on click add bongo beat to the loop(bongo2_beat160)
+                ></button>
+                <button 
+                className="onebeat"
+                // on click add bongo beat to the loop(bongo2_beat160)
+                ></button>
+                <button 
+                className="onebeat"
+                // on click add bongo beat to the loop(bongo2_beat160)
+                ></button>
+            </div>
 
-        <div className="loop-selection">
-            <div>
-                <select>
-                    <option value="BEATS">Beats</option>
-                    <option value="beat-1">1</option>
-                    <option value="beat-2">2</option>
-                    <option value="beat-3">3</option>
-                    <option value="beat-4">4</option>
-                    <option value="beat-5">5</option>
-                    <option value="beat-6">6</option>
-                    <option value="beat-7">7</option>
-                    <option value="beat-8">8</option>
-                    <option value="beat-9">9</option>
-                    <option value="beat-10">10</option>
-                </select>
-            </div>
-            <div>
-                <select>
-                    <option value="BACKING">Backing</option>
-                    <option value="beat-1">1</option>
-                    <option value="beat-2">2</option>
-                    <option value="beat-3">3</option>
-                    <option value="beat-4">4</option>
-                    <option value="beat-5">5</option>
-                    <option value="beat-6">6</option>
-                    <option value="beat-7">7</option>
-                    <option value="beat-8">8</option>
-                    <option value="beat-9">9</option>
-                    <option value="beat-10">10</option>
-                </select>
-            </div>
-            <div>
-                <select>
-                    <option value="VOCALS">Vocals</option>
-                    <option value="beat-1">1</option>
-                    <option value="beat-2">2</option>
-                    <option value="beat-3">3</option>
-                    <option value="beat-4">4</option>
-                    <option value="beat-5">5</option>
-                    <option value="beat-6">6</option>
-                    <option value="beat-7">7</option>
-                    <option value="beat-8">8</option>
-                    <option value="beat-9">9</option>
-                    <option value="beat-10">10</option>
-                </select>
-            </div>
-            <div>
-                <select>
-                    <option value="PZAZ">Pzaz</option>
-                    <option value="beat-1">1</option>
-                    <option value="beat-2">2</option>
-                    <option value="beat-3">3</option>
-                    <option value="beat-4">4</option>
-                    <option value="beat-5">5</option>
-                    <option value="beat-6">6</option>
-                    <option value="beat-7">7</option>
-                    <option value="beat-8">8</option>
-                    <option value="beat-9">9</option>
-                    <option value="beat-10">10</option>
-                </select>
-            </div>
         </div>
 
     </main>
