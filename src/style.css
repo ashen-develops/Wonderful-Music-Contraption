@@ -162,7 +162,8 @@ svg {
     display: inline-block;
     font-size: 16px;
     border-radius: 3%;
-    width: 80%
+    width: 80%;
+    max-width: 300px;
   }
 .trybtn{
     margin: 5px 20px;
@@ -175,7 +176,8 @@ svg {
     display: inline-block;
     font-size: 16px;
     border-radius: 3%;  
-    width: 80%
+    width: 80%;
+    max-width: 300px;
 }
 /* .submit{
     margin: 5px 30px;

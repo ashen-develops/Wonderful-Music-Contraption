@@ -51,39 +51,53 @@ class Contraption extends React.Component {
             toggle:false,
           }
     }
-    handlePlayTwoBopB = () => {
-        const pianoSamples = new Tone.ToneAudioBuffers({
-            A2: twoBopB
+    // handlePlayTwoBopB = () => {
+    //     const pianoSamples = new Tone.ToneAudioBuffers({
+    //         A2: twoBopB
+    //     }, () => {
+    //         const player = new Tone.Player().toDestination();
+    //         // play one of the samples when they all load
+    //         player.buffer = pianoSamples.get("A2");
+    //         player.loop = true;
+    //         player.start();
+    //     });
+    // }
+    // handlePlayBongoBt = () => {
+    //     const pianoSamples = new Tone.ToneAudioBuffers({
+    //         A2: bongoBt
+    //     }, () => {
+    //         const player = new Tone.Player().toDestination();
+    //         // play one of the samples when they all load
+    //         player.buffer = pianoSamples.get("A2");
+    //         player.loop = true;
+    //         player.start();
+    //     });
+    // }
+    // handlePlaySunB = () => {
+    //     const pianoSamples = new Tone.ToneAudioBuffers({
+    //         A2: twoSunB,
+    //     }, () => {
+    //         const player = new Tone.Player().toDestination();
+    //         // play one of the samples when they all load
+    //         player.buffer = pianoSamples.get("A2");
+    //         player.loop = true;
+    //         player.start();
+    //     });
+    // }
+
+    //NEW SYSTEM TODO
+    //create a base handle play that takes in an option's value as an argument and queues up a that sound to be played
+    handlePlay = (value) => {
+        const player = new Tone.ToneAudioBuffers({
+            A1: value
         }, () => {
-            const player = new Tone.Player().toDestination();
-            // play one of the samples when they all load
-            player.buffer = pianoSamples.get("A2");
-            player.loop = true;
-            player.start();
-        });
+            const play = new Tone.Player().toDestination();
+            play.buffer = player.get("A1");
+            play.loop = true;
+
+        })
     }
-    handlePlayBongoBt = () => {
-        const pianoSamples = new Tone.ToneAudioBuffers({
-            A2: bongoBt
-        }, () => {
-            const player = new Tone.Player().toDestination();
-            // play one of the samples when they all load
-            player.buffer = pianoSamples.get("A2");
-            player.loop = true;
-            player.start();
-        });
-    }
-    handlePlaySunB = () => {
-        const pianoSamples = new Tone.ToneAudioBuffers({
-            A2: twoSunB,
-        }, () => {
-            const player = new Tone.Player().toDestination();
-            // play one of the samples when they all load
-            player.buffer = pianoSamples.get("A2");
-            player.loop = true;
-            player.start();
-        });
-    }
+    //create a function that handles submit and have it play all of the queued up sounds and loop them 
     
     render(){
         // To figure out ------------
@@ -95,13 +109,13 @@ class Contraption extends React.Component {
         <main>
 
             <div>
-                <h3>Start By Dragging and Dropping Some Beats</h3>
+                <h3>Experiment with some music</h3>
             </div>
                 <form>
                     <div className="music-box">
                         <div class="twobeatOver">
                             <div class="twobeat">
-                                <select id="twoBeatOne">
+                                <select id="groupOneTwoBeatOne">
                                     <option value={twoBopB}>Boppin'</option>
                                     <option value={twoBassB}>Bass Baby</option>
                                     <option value={twoCoffeeB}>Coffee Shop</option>
@@ -119,7 +133,7 @@ class Contraption extends React.Component {
                                 </select>
                             </div>
                             <div class="twobeat">
-                                <select id="twoBeatOne">
+                                <select id="groupOneTwoBeatTwo">
                                     <option value={twoBopB}>Boppin'</option>
                                     <option value={twoBassB}>Bass Baby</option>
                                     <option value={twoCoffeeB}>Coffee Shop</option>
@@ -140,7 +154,7 @@ class Contraption extends React.Component {
 
                         <div class="onebeatOver">
                             <div class="onebeat">
-                                <select id="oneBeatOne">
+                                <select id="groupTwoOneBeatOne">
                                     <option value={amB}>AM</option>
                                     <option value={funkB}>Funk</option>
                                     <option value={oooB}>OOO</option>
@@ -159,8 +173,8 @@ class Contraption extends React.Component {
                                 </select>
                             </div>
                             <div class="onebeat">
-                                <select id="oneBeatTwo">
-                                <option value={amB}>AM</option>
+                                <select id="groupTwoOneBeatTwo">
+                                    <option value={amB}>AM</option>
                                     <option value={funkB}>Funk</option>
                                     <option value={oooB}>OOO</option>
                                     <option value={rockB}>Rock</option>
@@ -179,8 +193,8 @@ class Contraption extends React.Component {
                             </div>
 
                             <div class="onebeat">
-                                <select id="oneBeatThree">
-                                <option value={amB}>AM</option>
+                                <select id="groupTwoOneBeatThree">
+                                    <option value={amB}>AM</option>
                                     <option value={funkB}>Funk</option>
                                     <option value={oooB}>OOO</option>
                                     <option value={rockB}>Rock</option>
@@ -198,8 +212,8 @@ class Contraption extends React.Component {
                                 </select>
                             </div>
                             <div class="onebeat">
-                                <select id="oneBeatFour">
-                                <option value={amB}>AM</option>
+                                <select id="groupTwoOneBeatFour">
+                                    <option value={amB}>AM</option>
                                     <option value={funkB}>Funk</option>
                                     <option value={oooB}>OOO</option>
                                     <option value={rockB}>Rock</option>
@@ -219,14 +233,14 @@ class Contraption extends React.Component {
                         </div>
                         <div class="twobeatOver">
                             <div class="twobeat">
-                                <select id="twoBeatOne">
+                                <select id="groupThreeTwoBeatOne">
                                     <option value={twoVocalBa}>Vocal: Baa</option>
                                     <option value={twoVocalIndig}>Vocal: Indigo</option>
                                     <option value={twoVocalRun}>Vocal: Runaway</option>
                                 </select>
                             </div>
                             <div class="twobeat">
-                                <select id="twoBeatOne">
+                                <select id="groupThreeTwoBeatTwo">
                                     <option value={twoVocalBa}>Vocal: Baa</option>
                                     <option value={twoVocalIndig}>Vocal: Indigo</option>
                                     <option value={twoVocalRun}>Vocal: Runaway</option>
