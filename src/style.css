@@ -72,6 +72,7 @@ header .show-nav {
     width: 90%;
     margin: 10px auto;
     border-radius: 10px;
+    color: rgb
 
 }
 
@@ -163,7 +164,7 @@ svg {
     font-size: 16px;
     border-radius: 3%;
     width: 80%;
-    max-width: 300px;
+    max-width: 500px;
   }
 .trybtn{
     margin: 5px 20px;
@@ -177,7 +178,7 @@ svg {
     font-size: 16px;
     border-radius: 3%;  
     width: 80%;
-    max-width: 300px;
+    max-width: 500px;
 }
 /* .submit{
     margin: 5px 30px;
@@ -242,7 +243,9 @@ form{
     display: flex;
     flex-direction: column;
     color: rgb(213, 223, 229);
-    margin: 5px 20px;
+    margin: 5px auto;
+    max-width: 550px;
+    width: 90%;
 }
 label{
     text-align: left;
@@ -346,4 +349,10 @@ select {
     background-color: #fff;
     background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
     text-align: center;
+}
+
+@media all and (min-width: 600px){
+    .center {
+        zoom: 100%;
+    }
 }
