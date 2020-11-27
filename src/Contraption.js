@@ -98,6 +98,56 @@ class Contraption extends React.Component {
         })
     }
     //create a function that handles submit and have it play all of the queued up sounds and loop them 
+
+    /* handleSubmit = (e) => {
+        e.preventDefault();
+
+        create a function for GroupOneTwoBeatOne
+            then get the value of GroupOneTwoBeatOne
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport first in line one
+
+        create a function for GroupOneTwoBeatTwo
+            then get the value of GroupOneTwoBeatTwo
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport second in line one
+
+        create a function for GroupTwoOneBeatOne
+            then get the value of GroupTwoOneBeatOne
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport first in line two
+
+        create a function for GroupTwoOneBeatTwo
+            then get the value of GroupTwoOneBeatTwo
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport second in line two
+
+        create a function for GroupTwoOneBeatThree
+            then get the value of GroupTwoOneBeatThree
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport third in line two
+
+        create a function for GroupTwoOneBeatFour
+            then get the value of GroupTwoOneBeatFour
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport fourth in line two
+
+        create a function for GroupThreeOneBeatOne
+            then get the value of GroupTwoOneBeatOne
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport first in line three
+
+        create a function for GroupThreeOneBeatTwo
+            then get the value of GroupTwoOneBeatTwo
+            use this value to do a handle transport (should be able to use something very similar to the handlePlay up above but with storing in a transport [see docs])
+            make the value in the transport second in line three
+
+        then buffer and play the set up transport
+        
+        
+            
+        
+    }
     
     render(){
         // To figure out ------------
