@@ -76,7 +76,7 @@ class Landing extends Component {
                                     onChange={this.toggleShow}
                                     />Show Password
                             </label>
-                            {/* <!-- <input class="submit" type="submit" value="Login"> --> */}
+                            {/* <!-- <input className="submit" type="submit" value="Login"> --> */}
                     {/* <!-- THIS SVG LINE NEEDS SOME REFINING still have it kind of shakey on the rounded corners --> */}
                             <div className="container">
                             <div className="center">
