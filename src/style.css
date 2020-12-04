@@ -335,7 +335,7 @@ select {
 .onebeat{
     width: 17%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 25px 0;
     margin: 10px;
     min-width: 10px;
