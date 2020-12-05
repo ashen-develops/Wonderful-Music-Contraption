@@ -1,6 +1,8 @@
 /* eslint-disable eqeqeq */
 import React from "react";
+import config from './config'
 import * as Tone from "tone";
+
 import twoBopB from "./Media/Backing/2bop_back160.mp3";
 import twoFunkB from "./Media/Backing/2funk_back160.mp3";
 import twoSunB from "./Media/Backing/2sun_back.mp3";
@@ -34,6 +36,7 @@ import pixM from "./Media/Melody/pix_melody160.mp3";
 import twoVocalBa from "./Media/Vocals/2ba_vocals160.mp3";
 import twoVocalIndig from "./Media/Vocals/2indig_melody.mp3";
 import twoVocalRun from "./Media/Vocals/2runaway_vocals.mp3";
+import { Time } from "tone";
 
 class Contraption extends React.Component {
     constructor(props) {
@@ -51,7 +54,8 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(0).stop(5.294)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
+        
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -70,7 +74,7 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(5.294).stop(10.558)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -89,7 +93,7 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(0).stop(2.647)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -108,7 +112,7 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(2.647).stop(5.294)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -127,7 +131,7 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(5.294).stop(7.941)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -146,7 +150,7 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(7.941).stop(10.558)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -165,7 +169,7 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(0).stop(5.294)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -184,7 +188,7 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(5.294).stop(10.558)
-        Tone.Transport.start();
+        Tone.Transport.toggle();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
         Tone.Transport.loop = true;
@@ -197,6 +201,14 @@ class Contraption extends React.Component {
 
     handleSubmit = (e) => {
       e.preventDefault();
+
+      this.setState({
+        toggle: !this.state.toggle
+      })
+      if (!this.state.toggle){
+        
+      }
+
       //Tone.Transport.Toggle
       console.log("handle submit works");
 
@@ -517,7 +529,58 @@ class Contraption extends React.Component {
       else if (groupThreeTwoBeatTwo == 'Vocal: Runaway'){
           this.handlePlayGroupThreeTwoBeatTwo(twoVocalRun)
       }
+      console.log(this.state)
+
+      
     };
+    handleSave = (e) => {
+      e.preventDefault();
+      //Tone.Transport.Toggle
+      console.log("handle save loads");
+
+      //create an object to store the search filters
+      const testData = {};
+  
+      //get all the from data from the form component
+      const formData = new FormData(e.target);
+  
+      //for each of the keys in form data populate it with form value
+      for (let value of formData) {
+        testData[value[0]] = value[1];
+      }
+      const {
+        groupOneTwoBeatOne,
+        groupOneTwoBeatTwo,
+        groupTwoOneBeatOne,
+        groupTwoOneBeatTwo,
+        groupTwoOneBeatThree,
+        groupTwoOneBeatFour,
+        groupThreeTwoBeatOne,
+        groupThreeTwoBeatTwo
+      } = testData;
+      const folder = {
+        foldername: e.target['folder-name'].value
+      }
+      fetch(`${config.API_ENDPOINT}/folders`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(folder),
+      })
+        .then(res => {
+          if (!res.ok)
+            return res.json().then(e => Promise.reject(e))
+          return res.json()
+        })
+        .then(folder => {
+          this.context.addFolder(folder)
+          this.props.history.push(`/folder/${folder.id}`)
+        })
+        .catch(error => {
+          console.error({ error })
+        })
+    }
 
 
     
