@@ -495,6 +495,28 @@ class Contraption extends React.Component {
       else if (groupTwoOneBeatFour == 'Pixi'){
           this.handlePlayGroupTwoOneBeatFour(pixM)
       }
+
+      
+      if (groupThreeTwoBeatOne == 'Vocal: Baa'){
+        this.handlePlayGroupThreeTwoBeatOne(twoVocalBa)
+      }
+      else if (groupThreeTwoBeatOne == 'Vocal: Indigo'){
+          this.handlePlayGroupThreeTwoBeatOne(twoVocalIndig)
+      }
+      else if (groupThreeTwoBeatOne == 'Vocal: Runaway'){
+          this.handlePlayGroupThreeTwoBeatOne(twoVocalRun)
+      }
+
+      
+      if (groupThreeTwoBeatTwo == 'Vocal: Baa'){
+        this.handlePlayGroupThreeTwoBeatTwo(twoVocalBa)
+      }
+      else if (groupThreeTwoBeatTwo == 'Vocal: Indigo'){
+          this.handlePlayGroupThreeTwoBeatTwo(twoVocalIndig)
+      }
+      else if (groupThreeTwoBeatTwo == 'Vocal: Runaway'){
+          this.handlePlayGroupThreeTwoBeatTwo(twoVocalRun)
+      }
     };
 
 
