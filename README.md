@@ -59,7 +59,7 @@ One line description of what this app is doing and who is it for
 
 
 ### 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://wonderful-music-contraption.herokuapp.com/
 
 
 
