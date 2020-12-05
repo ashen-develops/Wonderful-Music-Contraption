@@ -218,6 +218,7 @@ header h2{
 main h3{
     color: rgb(213, 223, 229);
     font-size: 18px;
+    width: 80%;
 }
 main h2{
     color: rgb(213, 223, 229);
