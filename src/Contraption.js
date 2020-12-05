@@ -164,7 +164,7 @@ class Contraption extends React.Component {
           url: buffer,
           loop: false
         }).toDestination();
-        player.sync().start(0).stop(2.647)
+        player.sync().start(0).stop(5.294)
         Tone.Transport.start();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
@@ -183,7 +183,7 @@ class Contraption extends React.Component {
           url: buffer,
           loop: false
         }).toDestination();
-        player.sync().start(0).stop(2.647)
+        player.sync().start(5.294).stop(10.558)
         Tone.Transport.start();
         console.log('transport started')
         // Tone.Transport.bpm.value = 160;
@@ -532,7 +532,10 @@ class Contraption extends React.Component {
           <div>
             <main>
               <div>
-                <h3>Experiment with some music</h3>
+                <h2>Experiment with some music!</h2>
+                <h3>Hello dear user! This app is very much so a WIP and has some quirks (such as my recommendation to turn down you're volume because I don't have every track's volume tweaked yet), however I would like to thank you for visiting my site and trying out my Wonderful Music Contraption. I hope to update this to a completely satisfying and viceral music experience, but for now enjoy what's here. 
+                </h3>
+                <h3>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page. OH ALSO, there is no stop button yet, so for the sake of your ears, just refresh the page for now.</h3>
               </div>
               <form onSubmit={this.handleSubmit}>
                 <div className="music-box">
