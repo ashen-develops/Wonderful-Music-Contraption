@@ -1,11 +1,11 @@
 /* eslint-disable eqeqeq */
 import React from "react";
-import config from './config'
+// import config from './config'
 import * as Tone from "tone";
 
 import twoBopB from "./Media/Backing/2bop_back160.mp3";
 import twoFunkB from "./Media/Backing/2funk_back160.mp3";
-import twoSunB from "./Media/Backing/2sun_back.mp3";
+// import twoSunB from "./Media/Backing/2sun_back.mp3";
 import twoBassB from "./Media/Backing/2bop_back160.mp3";
 import twoCoffeeB from "./Media/Beats/bongo_beat160.mp3";
 import twoFlourishB from "./Media/Backing/2sun_back.mp3";
@@ -452,7 +452,7 @@ class Contraption extends React.Component {
                   <input type="submit" value={this.state.pBtn} />
                 </div>
               </form>
-              <h3>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page. OH ALSO, there is no stop button yet, so for the sake of your ears, just refresh the page for now.</h3>
+              <h3>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page (which the stop button will do for you until I can figure out how to not have one million sounds play at once everytime you start up a stopped procedure).</h3>
             </main>
           </div>
       );

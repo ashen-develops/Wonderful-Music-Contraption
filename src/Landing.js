@@ -73,7 +73,7 @@ class Landing extends Component {
                                     className="show-pwd" 
                                     type="checkbox" 
                                     id="show-pwd"
-                                    onChange={this.toggleShow}
+                                    onChange={() => this.toggleShow()}
                                     />Show Password
                             </label>
                             {/* <!-- <input className="submit" type="submit" value="Login"> --> */}
