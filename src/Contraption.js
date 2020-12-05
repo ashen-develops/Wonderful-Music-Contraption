@@ -36,17 +36,30 @@ import pixM from "./Media/Melody/pix_melody160.mp3";
 import twoVocalBa from "./Media/Vocals/2ba_vocals160.mp3";
 import twoVocalIndig from "./Media/Vocals/2indig_melody.mp3";
 import twoVocalRun from "./Media/Vocals/2runaway_vocals.mp3";
-import { Time } from "tone";
 
 class Contraption extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        toggle: false
-      };
+        toggle: false,
+        pBtn: "Start",
+        valueOne: '...',
+        valueTwo: '...',
+        valueThree: '...',
+        valueFour: '...',
+        valueFive: '...',
+        valueSix: '...',
+        valueSeven: '...',
+        valueEight: '...'
+      }
     }
-    handlePlayGroupOneTwoBeatOne = (a) => {
-      Tone.start()
+
+    handlePlayAll = (a, b, c, d, e, f, g, h) => {
+      Tone.start();
+      Tone.Transport.loop = true;
+      Tone.Transport.loopStart = 0;
+      Tone.Transport.loopEnd = 10.558;
+
       const buffer = new Tone.ToneAudioBuffer(a, () => {
         console.log("loaded1");
         const player = new Tone.Player({
@@ -54,543 +67,208 @@ class Contraption extends React.Component {
           loop: false
         }).toDestination();
         player.sync().start(0).stop(5.294)
-        Tone.Transport.toggle();
-        
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-    };
-    handlePlayGroupOneTwoBeatTwo = (a) => {
-      Tone.start()
-      const buffer = new Tone.ToneAudioBuffer(a, () => {
+
+      const buffer2 = new Tone.ToneAudioBuffer(b, () => {
         console.log("loaded2");
         const player = new Tone.Player({
-          url: buffer,
+          url: buffer2,
           loop: false
         }).toDestination();
         player.sync().start(5.294).stop(10.558)
-        Tone.Transport.toggle();
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-    };
-    handlePlayGroupTwoOneBeatOne = (a) => {
-      Tone.start()
-      const buffer = new Tone.ToneAudioBuffer(a, () => {
+
+      const buffer3 = new Tone.ToneAudioBuffer(c, () => {
         console.log("loaded3");
         const player = new Tone.Player({
-          url: buffer,
+          url: buffer3,
           loop: false
         }).toDestination();
         player.sync().start(0).stop(2.647)
-        Tone.Transport.toggle();
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-    };
-    handlePlayGroupTwoOneBeatTwo = (a) => {
-      Tone.start()
-      const buffer = new Tone.ToneAudioBuffer(a, () => {
+
+      const buffer4 = new Tone.ToneAudioBuffer(d, () => {
         console.log("loaded4");
         const player = new Tone.Player({
-          url: buffer,
+          url: buffer4,
           loop: false
         }).toDestination();
         player.sync().start(2.647).stop(5.294)
-        Tone.Transport.toggle();
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-    };
-    handlePlayGroupTwoOneBeatThree = (a) => {
-      Tone.start()
-      const buffer = new Tone.ToneAudioBuffer(a, () => {
+
+      const buffer5 = new Tone.ToneAudioBuffer(e, () => {
         console.log("loaded5");
         const player = new Tone.Player({
-          url: buffer,
+          url: buffer5,
           loop: false
         }).toDestination();
         player.sync().start(5.294).stop(7.941)
-        Tone.Transport.toggle();
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-      };
-    handlePlayGroupTwoOneBeatFour = (a) => {
-      Tone.start()
-      const buffer = new Tone.ToneAudioBuffer(a, () => {
+
+      const buffer6 = new Tone.ToneAudioBuffer(f, () => {
         console.log("loaded6");
         const player = new Tone.Player({
-          url: buffer,
+          url: buffer6,
           loop: false
         }).toDestination();
         player.sync().start(7.941).stop(10.558)
-        Tone.Transport.toggle();
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-    };
-    handlePlayGroupThreeTwoBeatOne = (a) => {
-      Tone.start()
-      const buffer = new Tone.ToneAudioBuffer(a, () => {
+
+      const buffer7 = new Tone.ToneAudioBuffer(g, () => {
         console.log("loaded7");
         const player = new Tone.Player({
-          url: buffer,
+          url: buffer7,
           loop: false
         }).toDestination();
         player.sync().start(0).stop(5.294)
-        Tone.Transport.toggle();
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-    };
-    handlePlayGroupThreeTwoBeatTwo = (a) => {
-      Tone.start()
-      const buffer = new Tone.ToneAudioBuffer(a, () => {
-        console.log("loaded8");
+
+      const buffer8 = new Tone.ToneAudioBuffer(h, () => {
+        console.log("loaded7");
         const player = new Tone.Player({
-          url: buffer,
+          url: buffer8,
           loop: false
         }).toDestination();
         player.sync().start(5.294).stop(10.558)
-        Tone.Transport.toggle();
-        console.log('transport started')
-        // Tone.Transport.bpm.value = 160;
-        Tone.Transport.loop = true;
-        Tone.Transport.loopStart = 0;
-        Tone.Transport.loopEnd = 10.558;
-        // Tone.Transport.timeSignature = 4;
-        
       });
-    };
 
-    handleSubmit = (e) => {
-      e.preventDefault();
-
-      this.setState({
-        toggle: !this.state.toggle
-      })
-      if (!this.state.toggle){
+      if (this.state.toggle){
+        this.setState({ pBtn: "Start" })
+        console.log("transport stopped")
+        Tone.Transport.clear(buffer, buffer2, buffer3, buffer4, buffer5, buffer6, buffer7, buffer8)
+        Tone.Transport.stop()
+      }
+      else if (this.state.toggle === false){
+        this.setState({ pBtn: "Stop" })
+        console.log("transport started")
         
+        Tone.Transport.start()
       }
 
+    }
+    handleSubmitAll = (e) => {
+      if (this.state.toggle === false){
+        e.preventDefault();
+      }
       //Tone.Transport.Toggle
       console.log("handle submit works");
 
-      //create an object to store the search filters
-      const testData = {};
-  
-      //get all the from data from the form component
-      const formData = new FormData(e.target);
-  
-      //for each of the keys in form data populate it with form value
-      for (let value of formData) {
-        testData[value[0]] = value[1];
-      }
-  
-      console.log(testData);
-  
-      const {
-          groupOneTwoBeatOne,
-          groupOneTwoBeatTwo,
-          groupTwoOneBeatOne,
-          groupTwoOneBeatTwo,
-          groupTwoOneBeatThree,
-          groupTwoOneBeatFour,
-          groupThreeTwoBeatOne,
-          groupThreeTwoBeatTwo
-      } = testData;
-      if (groupOneTwoBeatOne == 'Boppin'){
-        this.handlePlayGroupOneTwoBeatOne(twoBopB)
-      }
-      else if (groupOneTwoBeatOne == 'Bass Baby'){
-        this.handlePlayGroupOneTwoBeatOne(twoBassB)
-      }
-      else if (groupOneTwoBeatOne == 'Coffee Shop'){
-        this.handlePlayGroupOneTwoBeatOne(twoCoffeeB)
-      }
-      else if (groupOneTwoBeatOne == 'Flourish'){
-        this.handlePlayGroupOneTwoBeatOne(twoFlourishB)
-      }
-      else if (groupOneTwoBeatOne == 'Funky'){
-        this.handlePlayGroupOneTwoBeatOne(twoFunkB)
-      }
-      else if (groupOneTwoBeatOne == 'Atmosphere'){
-        this.handlePlayGroupOneTwoBeatOne(twoAtmosM)
-      }
-      else if (groupOneTwoBeatOne == 'Fun'){
-        this.handlePlayGroupOneTwoBeatOne(twoFunM)
-      }
-      else if (groupOneTwoBeatOne == 'Guitar'){
-        this.handlePlayGroupOneTwoBeatOne(twoGuitarM)
-      }
-      else if (groupOneTwoBeatOne == 'Koto'){
-        this.handlePlayGroupOneTwoBeatOne(twoKotoM)
-      }
-      else if (groupOneTwoBeatOne == 'Big Koto'){
-        this.handlePlayGroupOneTwoBeatOne(twoKotoTwoM)
-      }
-      else if (groupOneTwoBeatOne == 'Lofi'){
-        this.handlePlayGroupOneTwoBeatOne(twoLofiM)
-      }
-      else if (groupOneTwoBeatOne == 'Piano'){
-        this.handlePlayGroupOneTwoBeatOne(twoPianoM)
-      }
-      else if (groupOneTwoBeatOne == 'Piano Dos'){
-        this.handlePlayGroupOneTwoBeatOne(twoPianoTwoM)
-      }
-      else if (groupOneTwoBeatOne == 'Koto Trap'){
-        this.handlePlayGroupOneTwoBeatOne(twoTrapkotoM)
-      }
-
-      if (groupOneTwoBeatTwo == 'Boppin'){
-        this.handlePlayGroupOneTwoBeatTwo(twoBopB)
-      }
-      else if (groupOneTwoBeatTwo == 'Bass Baby'){
-        this.handlePlayGroupOneTwoBeatTwo(twoBassB)
-      }
-      else if (groupOneTwoBeatTwo == 'Coffee Shop'){
-        this.handlePlayGroupOneTwoBeatTwo(twoCoffeeB)
-      }
-      else if (groupOneTwoBeatTwo == 'Flourish'){
-        this.handlePlayGroupOneTwoBeatTwo(twoFlourishB)
-      }
-      else if (groupOneTwoBeatTwo == 'Funky'){
-        this.handlePlayGroupOneTwoBeatTwo(twoFunkB)
-      }
-      else if (groupOneTwoBeatTwo == 'Atmosphere'){
-        this.handlePlayGroupOneTwoBeatTwo(twoAtmosM)
-      }
-      else if (groupOneTwoBeatTwo == 'Fun'){
-        this.handlePlayGroupOneTwoBeatTwo(twoFunM)
-      }
-      else if (groupOneTwoBeatTwo == 'Guitar'){
-        this.handlePlayGroupOneTwoBeatTwo(twoGuitarM)
-      }
-      else if (groupOneTwoBeatTwo == 'Koto'){
-        this.handlePlayGroupOneTwoBeatTwo(twoKotoM)
-      }
-      else if (groupOneTwoBeatTwo == 'Big Koto'){
-        this.handlePlayGroupOneTwoBeatTwo(twoKotoTwoM)
-      }
-      else if (groupOneTwoBeatTwo == 'Lofi'){
-        this.handlePlayGroupOneTwoBeatTwo(twoLofiM)
-      }
-      else if (groupOneTwoBeatTwo == 'Piano'){
-        this.handlePlayGroupOneTwoBeatTwo(twoPianoM)
-      }
-      else if (groupOneTwoBeatTwo == 'Piano Dos'){
-        this.handlePlayGroupOneTwoBeatTwo(twoPianoTwoM)
-      }
-      else if (groupOneTwoBeatTwo == 'Koto Trap'){
-        this.handlePlayGroupOneTwoBeatTwo(twoTrapkotoM)
-      }
-
-      if (groupTwoOneBeatOne == 'AM'){
-        this.handlePlayGroupTwoOneBeatOne(amB)
-      }
-      else if (groupTwoOneBeatOne == 'Funk'){
-          this.handlePlayGroupTwoOneBeatOne(funkB)
-      }
-      else if (groupTwoOneBeatOne == 'OOO'){
-          this.handlePlayGroupTwoOneBeatOne(oooB)
-      }
-      else if (groupTwoOneBeatOne == 'Rock'){
-          this.handlePlayGroupTwoOneBeatOne(rockB)
-      }
-      else if (groupTwoOneBeatOne == 'Stand'){
-          this.handlePlayGroupTwoOneBeatOne(standB)
-      }
-      else if (groupTwoOneBeatOne == 'Bingo'){
-          this.handlePlayGroupTwoOneBeatOne(bongoBt)
-      }
-      else if (groupTwoOneBeatOne == 'Bongo'){
-          this.handlePlayGroupTwoOneBeatOne(bongoTwoBt)
-      }
-      else if (groupTwoOneBeatOne == 'Clicky'){
-          this.handlePlayGroupTwoOneBeatOne(clickBt)
-      }
-      else if (groupTwoOneBeatOne == 'PutPat'){
-          this.handlePlayGroupTwoOneBeatOne(funkBt)
-      }
-      else if (groupTwoOneBeatOne == 'AC'){
-          this.handlePlayGroupTwoOneBeatOne(rockBt)
-      }
-      else if (groupTwoOneBeatOne == 'Slow'){
-          this.handlePlayGroupTwoOneBeatOne(slowrockBt)
-      }
-      else if (groupTwoOneBeatOne == 'tech'){
-          this.handlePlayGroupTwoOneBeatOne(techBt)
-      }
-      else if (groupTwoOneBeatOne == 'Funk Melody'){
-          this.handlePlayGroupTwoOneBeatOne(funkM)
-      }
-      else if (groupTwoOneBeatOne == 'Piano'){
-          this.handlePlayGroupTwoOneBeatOne(pianoM)
-      }
-      else if (groupTwoOneBeatOne == 'Pixi'){
-          this.handlePlayGroupTwoOneBeatOne(pixM)
-      }
-
-
-      if (groupTwoOneBeatTwo == 'AM'){
-          this.handlePlayGroupTwoOneBeatTwo(amB) 
-      }
-      else if (groupTwoOneBeatTwo == 'Funk'){
-          this.handlePlayGroupTwoOneBeatTwo(funkB)
-      }
-      else if (groupTwoOneBeatTwo == 'OOO'){
-          this.handlePlayGroupTwoOneBeatTwo(oooB)
-      }
-      else if (groupTwoOneBeatTwo == 'Rock'){
-          this.handlePlayGroupTwoOneBeatTwo(rockB)
-      }
-      else if (groupTwoOneBeatTwo == 'Stand'){
-          this.handlePlayGroupTwoOneBeatTwo(standB)
-      }
-      else if (groupTwoOneBeatTwo == 'Bingo'){
-          this.handlePlayGroupTwoOneBeatTwo(bongoBt)
-      }
-      else if (groupTwoOneBeatTwo == 'Bongo'){
-          this.handlePlayGroupTwoOneBeatTwo(bongoTwoBt)
-      }
-      else if (groupTwoOneBeatTwo == 'Clicky'){
-          this.handlePlayGroupTwoOneBeatTwo(clickBt)
-      }
-      else if (groupTwoOneBeatTwo == 'PutPat'){
-          this.handlePlayGroupTwoOneBeatTwo(funkBt)
-      }
-      else if (groupTwoOneBeatTwo == 'AC'){
-          this.handlePlayGroupTwoOneBeatTwo(rockBt)
-      }
-      else if (groupTwoOneBeatTwo == 'Slow'){
-          this.handlePlayGroupTwoOneBeatTwo(slowrockBt)
-      }
-      else if (groupTwoOneBeatTwo == 'tech'){
-          this.handlePlayGroupTwoOneBeatTwo(techBt)
-      }
-      else if (groupTwoOneBeatTwo == 'Funk Melody'){
-          this.handlePlayGroupTwoOneBeatTwo(funkM)
-      }
-      else if (groupTwoOneBeatTwo == 'Piano'){
-          this.handlePlayGroupTwoOneBeatTwo(pianoM)
-      }
-      else if (groupTwoOneBeatTwo == 'Pixi'){
-          this.handlePlayGroupTwoOneBeatTwo(pixM)
-      }
-
-
-      if (groupTwoOneBeatThree == 'AM'){
-          this.handlePlayGroupTwoOneBeatThree(amB) 
-      }
-      else if (groupTwoOneBeatThree == 'Funk'){
-          this.handlePlayGroupTwoOneBeatThree(funkB)
-      }
-      else if (groupTwoOneBeatThree == 'OOO'){
-          this.handlePlayGroupTwoOneBeatThree(oooB)
-      }
-      else if (groupTwoOneBeatThree == 'Rock'){
-          this.handlePlayGroupTwoOneBeatThree(rockB)
-      }
-      else if (groupTwoOneBeatThree == 'Stand'){
-          this.handlePlayGroupTwoOneBeatThree(standB)
-      }
-      else if (groupTwoOneBeatThree == 'Bingo'){
-          this.handlePlayGroupTwoOneBeatThree(bongoBt)
-      }
-      else if (groupTwoOneBeatThree == 'Bongo'){
-          this.handlePlayGroupTwoOneBeatThree(bongoTwoBt)
-      }
-      else if (groupTwoOneBeatThree == 'Clicky'){
-          this.handlePlayGroupTwoOneBeatThree(clickBt)
-      }
-      else if (groupTwoOneBeatThree == 'PutPat'){
-          this.handlePlayGroupTwoOneBeatThree(funkBt)
-      }
-      else if (groupTwoOneBeatThree == 'AC'){
-          this.handlePlayGroupTwoOneBeatThree(rockBt)
-      }
-      else if (groupTwoOneBeatThree == 'Slow'){
-          this.handlePlayGroupTwoOneBeatThree(slowrockBt)
-      }
-      else if (groupTwoOneBeatThree == 'tech'){
-          this.handlePlayGroupTwoOneBeatThree(techBt)
-      }
-      else if (groupTwoOneBeatThree == 'Funk Melody'){
-          this.handlePlayGroupTwoOneBeatThree(funkM)
-      }
-      else if (groupTwoOneBeatThree == 'Piano'){
-          this.handlePlayGroupTwoOneBeatThree(pianoM)
-      }
-      else if (groupTwoOneBeatThree == 'Pixi'){
-          this.handlePlayGroupTwoOneBeatThree(pixM)
-      }
-
-
-      if (groupTwoOneBeatFour == 'AM'){
-          this.handlePlayGroupTwoOneBeatFour(amB) 
-      }
-      else if (groupTwoOneBeatFour == 'Funk'){
-          this.handlePlayGroupTwoOneBeatFour(funkB)
-      }
-      else if (groupTwoOneBeatFour == 'OOO'){
-          this.handlePlayGroupTwoOneBeatFour(oooB)
-      }
-      else if (groupTwoOneBeatFour == 'Rock'){
-          this.handlePlayGroupTwoOneBeatFour(rockB)
-      }
-      else if (groupTwoOneBeatFour == 'Stand'){
-          this.handlePlayGroupTwoOneBeatFour(standB)
-      }
-      else if (groupTwoOneBeatFour == 'Bingo'){
-          this.handlePlayGroupTwoOneBeatFour(bongoBt)
-      }
-      else if (groupTwoOneBeatFour == 'Bongo'){
-          this.handlePlayGroupTwoOneBeatFour(bongoTwoBt)
-      }
-      else if (groupTwoOneBeatFour == 'Clicky'){
-          this.handlePlayGroupTwoOneBeatFour(clickBt)
-      }
-      else if (groupTwoOneBeatFour == 'PutPat'){
-          this.handlePlayGroupTwoOneBeatFour(funkBt)
-      }
-      else if (groupTwoOneBeatFour == 'AC'){
-          this.handlePlayGroupTwoOneBeatFour(rockBt)
-      }
-      else if (groupTwoOneBeatFour == 'Slow'){
-          this.handlePlayGroupTwoOneBeatFour(slowrockBt)
-      }
-      else if (groupTwoOneBeatFour == 'tech'){
-          this.handlePlayGroupTwoOneBeatFour(techBt)
-      }
-      else if (groupTwoOneBeatFour == 'Funk Melody'){
-          this.handlePlayGroupTwoOneBeatFour(funkM)
-      }
-      else if (groupTwoOneBeatFour == 'Piano'){
-          this.handlePlayGroupTwoOneBeatFour(pianoM)
-      }
-      else if (groupTwoOneBeatFour == 'Pixi'){
-          this.handlePlayGroupTwoOneBeatFour(pixM)
-      }
-
-      
-      if (groupThreeTwoBeatOne == 'Vocal: Baa'){
-        this.handlePlayGroupThreeTwoBeatOne(twoVocalBa)
-      }
-      else if (groupThreeTwoBeatOne == 'Vocal: Indigo'){
-          this.handlePlayGroupThreeTwoBeatOne(twoVocalIndig)
-      }
-      else if (groupThreeTwoBeatOne == 'Vocal: Runaway'){
-          this.handlePlayGroupThreeTwoBeatOne(twoVocalRun)
-      }
-
-      
-      if (groupThreeTwoBeatTwo == 'Vocal: Baa'){
-        this.handlePlayGroupThreeTwoBeatTwo(twoVocalBa)
-      }
-      else if (groupThreeTwoBeatTwo == 'Vocal: Indigo'){
-          this.handlePlayGroupThreeTwoBeatTwo(twoVocalIndig)
-      }
-      else if (groupThreeTwoBeatTwo == 'Vocal: Runaway'){
-          this.handlePlayGroupThreeTwoBeatTwo(twoVocalRun)
-      }
-      console.log(this.state)
-
-      
-    };
-    handleSave = (e) => {
-      e.preventDefault();
-      //Tone.Transport.Toggle
-      console.log("handle save loads");
-
-      //create an object to store the search filters
-      const testData = {};
-  
-      //get all the from data from the form component
-      const formData = new FormData(e.target);
-  
-      //for each of the keys in form data populate it with form value
-      for (let value of formData) {
-        testData[value[0]] = value[1];
-      }
-      const {
-        groupOneTwoBeatOne,
-        groupOneTwoBeatTwo,
-        groupTwoOneBeatOne,
-        groupTwoOneBeatTwo,
-        groupTwoOneBeatThree,
-        groupTwoOneBeatFour,
-        groupThreeTwoBeatOne,
-        groupThreeTwoBeatTwo
-      } = testData;
-      const folder = {
-        foldername: e.target['folder-name'].value
-      }
-      fetch(`${config.API_ENDPOINT}/folders`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(folder),
+      this.handlePlayAll(this.state.valueOne, this.state.valueTwo, this.state.valueThree, this.state.valueFour, this.state.valueFive, this.state.valueSix, this.state.valueSeven, this.state.valueEight)
+      this.setState({
+        toggle: !this.state.toggle
       })
-        .then(res => {
-          if (!res.ok)
-            return res.json().then(e => Promise.reject(e))
-          return res.json()
-        })
-        .then(folder => {
-          this.context.addFolder(folder)
-          this.props.history.push(`/folder/${folder.id}`)
-        })
-        .catch(error => {
-          console.error({ error })
-        })
     }
+    
 
+
+    // handlePlayGroupOneTwoBeatOne = (a) => {
+    //   Tone.start()
+    //   const buffer = new Tone.ToneAudioBuffer(a, () => {
+    //     const player = new Tone.Player({
+    //       url: buffer,
+    //       loop: false
+    //     }).toDestination();
+    //     player.sync().start(0).stop(5.294)
+    //     if (this.state.toggle){
+    //       console.log("transport stopped 1")
+    //       Tone.Transport.stop()
+    //     }
+    //     else if (this.state.toggle === false){
+    //       console.log("transport started 1")
+    //       Tone.Transport.start()
+    //     }
+    //     Tone.Transport.loop = true;
+    //     Tone.Transport.loopStart = 0;
+    //     Tone.Transport.loopEnd = 10.558;
+        
+    //   });
+    // };
+
+    // handleSave = (e) => {
+    //   e.preventDefault();
+    //   //Tone.Transport.Toggle
+    //   console.log("handle save loads");
+
+    //   //create an object to store the search filters
+    //   const testData = {};
+  
+    //   //get all the from data from the form component
+    //   const formData = new FormData(e.target);
+  
+    //   //for each of the keys in form data populate it with form value
+    //   for (let value of formData) {
+    //     testData[value[0]] = value[1];
+    //   }
+    //   const {
+    //     groupOneTwoBeatOne,
+    //     groupOneTwoBeatTwo,
+    //     groupTwoOneBeatOne,
+    //     groupTwoOneBeatTwo,
+    //     groupTwoOneBeatThree,
+    //     groupTwoOneBeatFour,
+    //     groupThreeTwoBeatOne,
+    //     groupThreeTwoBeatTwo
+    //   } = testData;
+    //   const folder = {
+    //     foldername: e.target['folder-name'].value
+    //   }
+    //   fetch(`${config.API_ENDPOINT}/folders`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(folder),
+    //   })
+    //     .then(res => {
+    //       if (!res.ok)
+    //         return res.json().then(e => Promise.reject(e))
+    //       return res.json()
+    //     })
+    //     .then(folder => {
+    //       this.context.addFolder(folder)
+    //       this.props.history.push(`/folder/${folder.id}`)
+    //     })
+    //     .catch(error => {
+    //       console.error({ error })
+    //     })
+    // }
+    handleChangeOne(e){
+      Tone.start();
+      this.setState({ valueOne: e.currentTarget.value })
+    }
+    handleChangeTwo(e){
+      Tone.start();
+      this.setState({ valueTwo: e.currentTarget.value })
+    }
+    handleChangeThree(e){
+      Tone.start();
+      this.setState({ valueThree: e.currentTarget.value })
+    }
+    handleChangeFour(e){
+      Tone.start();
+      this.setState({ valueFour: e.currentTarget.value })
+    }
+    handleChangeFive(e){
+      Tone.start();
+      this.setState({ valueFive: e.currentTarget.value })
+    }
+    handleChangeSix(e){
+      Tone.start();
+      this.setState({ valueSix: e.currentTarget.value })
+    }
+    handleChangeSeven(e){
+      Tone.start();
+      this.setState({ valueSeven: e.currentTarget.value })
+    }
+    handleChangeEight(e){
+      Tone.start();
+      this.setState({ valueEight: e.currentTarget.value })
+    }
 
     
 
       render() {
         // To figure out ------------
-        // Handle play (submit) to play all selected values in one loop
-        // Figure out how to get each "measure" to play one after another
-        // Select boxes on change should put that value into the handlePlay function
-        //
         return (
           <div>
             <main>
@@ -598,155 +276,170 @@ class Contraption extends React.Component {
                 <h2>Experiment with some music!</h2>
                 <h3>Hello dear user! This app is very much so a WIP and has some quirks (such as my recommendation to turn down you're volume because I don't have every track's volume tweaked yet), however I would like to thank you for visiting my site and trying out my Wonderful Music Contraption. I hope to update this to a completely satisfying and viceral music experience, but for now enjoy what's here. 
                 </h3>
-                <h3>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page. OH ALSO, there is no stop button yet, so for the sake of your ears, just refresh the page for now.</h3>
+
               </div>
-              <form onSubmit={this.handleSubmit}>
+              <form id="music-form" onSubmit={this.handleSubmitAll}>
                 <div className="music-box">
                   <div className="twobeatOver">
                     <div className="twobeat">
                       <select
                         id="groupOneTwoBeatOne" 
                         name="groupOneTwoBeatOne"
+                        onChange={e => this.handleChangeOne(e)}
                         // value={this.state.selectValue} 
                         // onChange={this.handleChange}
                         >
-                        {/* <option defaultValue={twoBopB}>{twoBopB}</option> */}
-                        <option defaultValue="">...</option>
-                        <option defaultValue={twoBopB}>Boppin</option>
-                        <option defaultValue={twoBassB}>Bass Baby</option>
-                        <option defaultValue={twoCoffeeB}>Coffee Shop</option>
-                        <option defaultValue={twoFlourishB}>Flourish</option>
-                        <option defaultValue={twoFunkB}>Funky</option>
-                        <option defaultValue={twoAtmosM}>Atmosphere</option>
-                        <option defaultValue={twoFunM}>Fun</option>
-                        <option defaultValue={twoGuitarM}>Guitar</option>
-                        <option defaultValue={twoKotoM}>Koto</option>
-                        <option defaultValue={twoKotoTwoM}>Big Koto</option>
-                        <option defaultValue={twoLofiM}>Lofi</option>
-                        <option defaultValue={twoPianoM}>Piano</option>
-                        <option defaultValue={twoPianoTwoM}>Piano Dos</option>
-                        <option defaultValue={twoTrapkotoM}>Koto Trap</option>
+                        {/* <option value={twoBopB}>{twoBopB}</option> */}
+                        <option id="..." value=".a.">...</option>
+                        <option value={twoBopB}>Boppin</option>
+                        <option value={twoBassB}>Bass Baby</option>
+                        <option value={twoCoffeeB}>Coffee Shop</option>
+                        <option value={twoFlourishB}>Flourish</option>
+                        <option value={twoFunkB}>Funky</option>
+                        <option value={twoAtmosM}>Atmosphere</option>
+                        <option value={twoFunM}>Fun</option>
+                        <option value={twoGuitarM}>Guitar</option>
+                        <option value={twoKotoM}>Koto</option>
+                        <option value={twoKotoTwoM}>Big Koto</option>
+                        <option value={twoLofiM}>Lofi</option>
+                        <option value={twoPianoM}>Piano</option>
+                        <option value={twoPianoTwoM}>Piano Dos</option>
+                        <option value={twoTrapkotoM}>Koto Trap</option>
                       </select>
                     </div>
                     <div className="twobeat">
-                      <select id="groupOneTwoBeatTwo" name="groupOneTwoBeatTwo">
-                        <option defaultValue="">...</option>
-                        <option defaultValue={twoBopB}>Boppin'</option>
-                        <option defaultValue={twoBassB}>Bass Baby</option>
-                        <option defaultValue={twoCoffeeB}>Coffee Shop</option>
-                        <option defaultValue={twoFlourishB}>Flourish</option>
-                        <option defaultValue={twoFunkB}>Funky</option>
-                        <option defaultValue={twoAtmosM}>Atmosphere</option>
-                        <option defaultValue={twoFunM}>Fun</option>
-                        <option defaultValue={twoGuitarM}>Guitar</option>
-                        <option defaultValue={twoKotoM}>Koto</option>
-                        <option defaultValue={twoKotoTwoM}>Big Koto</option>
-                        <option defaultValue={twoLofiM}>Lofi</option>
-                        <option defaultValue={twoPianoM}>Piano</option>
-                        <option defaultValue={twoPianoTwoM}>Piano Dos</option>
-                        <option defaultValue={twoTrapkotoM}>Koto Trap</option>
+                      <select id="groupOneTwoBeatTwo" 
+                      name="groupOneTwoBeatTwo"
+                      onChange={e => this.handleChangeTwo(e)}>
+                        <option id="..." value="...">...</option>
+                        <option value={twoBopB}>Boppin'</option>
+                        <option value={twoBassB}>Bass Baby</option>
+                        <option value={twoCoffeeB}>Coffee Shop</option>
+                        <option value={twoFlourishB}>Flourish</option>
+                        <option value={twoFunkB}>Funky</option>
+                        <option value={twoAtmosM}>Atmosphere</option>
+                        <option value={twoFunM}>Fun</option>
+                        <option value={twoGuitarM}>Guitar</option>
+                        <option value={twoKotoM}>Koto</option>
+                        <option value={twoKotoTwoM}>Big Koto</option>
+                        <option value={twoLofiM}>Lofi</option>
+                        <option value={twoPianoM}>Piano</option>
+                        <option value={twoPianoTwoM}>Piano Dos</option>
+                        <option value={twoTrapkotoM}>Koto Trap</option>
                       </select>
                     </div>
                   </div>
     
                   <div className="onebeatOver">
                     <div className="onebeat">
-                      <select id="groupTwoOneBeatOne" name="groupTwoOneBeatOne">
-                        <option defaultValue="">...</option>
-                        <option defaultValue={amB}>AM</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        <option defaultValue={oooB}>OOO</option>
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option>
-                        <option defaultValue={techBt}>tech</option>
-                        <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option>
+                      <select id="groupTwoOneBeatOne" 
+                      name="groupTwoOneBeatOne"
+                      onChange={e => this.handleChangeThree(e)}>
+                        <option value="">...</option>
+                        <option value={amB}>AM</option>
+                        <option value={funkB}>Funk</option>
+                        <option value={oooB}>OOO</option>
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option>
+                        <option value={bongoBt}>Bingo</option>
+                        <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option>
+                        <option value={techBt}>tech</option>
+                        <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option>
                       </select>
                     </div>
                     <div className="onebeat">
-                      <select id="groupTwoOneBeatTwo" name="groupTwoOneBeatTwo">
-                        <option defaultValue="">...</option>
-                        <option defaultValue={amB}>AM</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        <option defaultValue={oooB}>OOO</option>
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option>
-                        <option defaultValue={techBt}>tech</option>
-                        <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option>
+                      <select id="groupTwoOneBeatTwo" 
+                      name="groupTwoOneBeatTwo"
+                      onChange={e => this.handleChangeFour(e)}>
+                        <option value="">...</option>
+                        <option value={amB}>AM</option>
+                        <option value={funkB}>Funk</option>
+                        <option value={oooB}>OOO</option>
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option>
+                        <option value={bongoBt}>Bingo</option>
+                        <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option>
+                        <option value={techBt}>tech</option>
+                        <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option>
                       </select>
                     </div>
     
                     <div className="onebeat">
-                      <select id="groupTwoOneBeatThree" name="groupTwoOneBeatThree">
-                        <option defaultValue="">...</option>
-                        <option defaultValue={amB}>AM</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        <option defaultValue={oooB}>OOO</option>
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option>
-                        <option defaultValue={techBt}>tech</option>
-                        <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option>
+                      <select id="groupTwoOneBeatThree" 
+                      name="groupTwoOneBeatThree"
+                      onChange={e => this.handleChangeFive(e)}>
+                        <option value="">...</option>
+                        <option value={amB}>AM</option>
+                        <option value={funkB}>Funk</option>
+                        <option value={oooB}>OOO</option>
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option>
+                        <option value={bongoBt}>Bingo</option>
+                        <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option>
+                        <option value={techBt}>tech</option>
+                        <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option>
                       </select>
                     </div>
                     <div className="onebeat">
-                      <select id="groupTwoOneBeatFour" name="groupTwoOneBeatFour">
-                        <option defaultValue="">...</option>
-                        <option defaultValue={amB}>AM</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        <option defaultValue={oooB}>OOO</option>
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option>
-                        <option defaultValue={techBt}>tech</option>
-                        <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option>
+                      <select id="groupTwoOneBeatFour" 
+                      name="groupTwoOneBeatFour"
+                      onChange={e => this.handleChangeSix(e)}>
+                        <option value="">...</option>
+                        <option value={amB}>AM</option>
+                        <option value={funkB}>Funk</option>
+                        <option value={oooB}>OOO</option>
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option>
+                        <option value={bongoBt}>Bingo</option>
+                        <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option>
+                        <option value={techBt}>tech</option>
+                        <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option>
                       </select>
                     </div>
                   </div>
                   <div className="twobeatOver">
                     <div className="twobeat">
-                      <select id="groupThreeTwoBeatOne" name="groupThreeTwoBeatOne">
-                        <option defaultValue="">...</option>
-                        <option defaultValue={twoVocalBa}>Vocal: Baa</option>
-                        <option defaultValue={twoVocalIndig}>Vocal: Indigo</option>
-                        <option defaultValue={twoVocalRun}>Vocal: Runaway</option>
+                      <select id="groupThreeTwoBeatOne" 
+                      name="groupThreeTwoBeatOne"
+                      onChange={e => this.handleChangeSeven(e)}>
+                        <option value="">...</option>
+                        <option value={twoVocalBa}>Vocal: Baa</option>
+                        <option value={twoVocalIndig}>Vocal: Indigo</option>
+                        <option value={twoVocalRun}>Vocal: Runaway</option>
                       </select>
                     </div>
                     <div className="twobeat">
-                      <select id="groupThreeTwoBeatTwo" name="groupThreeTwoBeatTwo">
-                        <option defaultValue="">...</option>
-                        <option defaultValue={twoVocalBa}>Vocal: Baa</option>
-                        <option defaultValue={twoVocalIndig}>Vocal: Indigo</option>
-                        <option defaultValue={twoVocalRun}>Vocal: Runaway</option>
+                      <select id="groupThreeTwoBeatTwo" 
+                      name="groupThreeTwoBeatTwo"
+                      onChange={e => this.handleChangeEight(e)}>
+                        <option value="">...</option>
+                        <option value={twoVocalBa}>Vocal: Baa</option>
+                        <option value={twoVocalIndig}>Vocal: Indigo</option>
+                        <option value={twoVocalRun}>Vocal: Runaway</option>
                       </select>
                     </div>
                   </div>
@@ -756,9 +449,10 @@ class Contraption extends React.Component {
                   <button className="save">Save</button>
                 </div>
                 <div className="playButton">
-                  <input type="submit" />
+                  <input type="submit" value={this.state.pBtn} />
                 </div>
               </form>
+              <h3>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page. OH ALSO, there is no stop button yet, so for the sake of your ears, just refresh the page for now.</h3>
             </main>
           </div>
       );

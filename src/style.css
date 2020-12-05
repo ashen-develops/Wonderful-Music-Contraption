@@ -49,22 +49,6 @@ header .show-nav {
     height: 190px;
 }
 
-/* Media screen size */
-@media screen and (min-width: 768px) {
-    header button {
-        display: none;
-    }
-
-    header .links {
-        height: auto;
-        display: flex;
-    }
-
-    header li {
-        padding: 0 15px;
-    }
-}
-
 /* -------------------Music Contraption---------------------------------------- */
 .music-box{
     background-color: rgba(27, 27, 27, 0.3);
@@ -305,7 +289,7 @@ select {
 :root {
     --select-border: #777;
     --select-focus: blue;
-    --select-arrow: var(--select-border);
+    /* --select-arrow: var(--select-border); */
 }
 .onebeat::after {
     content: "";
@@ -357,9 +341,25 @@ select {
     background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
     text-align: center;
 }
+/* Media screen size */
+@media screen and (min-width: 768px) {
+    header button {
+        display: none;
+    }
+
+    header .links {
+        height: auto;
+        display: flex;
+    }
+
+    header li {
+        padding: 0 15px;
+    }
+}
 
 @media all and (min-width: 600px){
     .center {
         zoom: 100%;
     }
+
 }

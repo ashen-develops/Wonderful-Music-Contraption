@@ -631,83 +631,83 @@ class Contraption extends React.Component {
 
                     <div className="onebeat">
                       <select id="groupTwoOneBeatOne" name="groupTwoOneBeatOne">
-                        {/* <option defaultValue={amB}>AM</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        <option defaultValue={oooB}>OOO</option>
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option> */}
-                        <option defaultValue="">...</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option>
-                        <option defaultValue={techBt}>tech</option>
-                        {/* <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option> */}
+                        {/* <option value={amB}>AM</option>
+                        <option value={funkB}>Funk</option>
+                        <option value={oooB}>OOO</option>
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option> */}
+                        <option value="">...</option>
+                        <option value={bongoBt}>Bingo</option>
+                        <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option>
+                        <option value={techBt}>tech</option>
+                        {/* <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option> */}
                       </select>
                     </div>
 
                     <div className="onebeat">
                       <select id="groupTwoOneBeatTwo" name="groupTwoOneBeatTwo">
-                        {/* <option defaultValue={amB}>AM</option> */}
-                        <option defaultValue="">...</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        {/* <option defaultValue={oooB}>OOO</option> */}
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        {/* <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option> */}
-                        <option defaultValue={techBt}>tech</option>
-                        <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option>
+                        {/* <option value={amB}>AM</option> */}
+                        <option value="">...</option>
+                        <option value={funkB}>Funk</option>
+                        {/* <option value={oooB}>OOO</option> */}
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option>
+                        <option value={bongoBt}>Bingo</option>
+                        {/* <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option> */}
+                        <option value={techBt}>tech</option>
+                        <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option>
                       </select>
                     </div>
     
                     <div className="onebeat">
                       <select id="groupTwoOneBeatThree" name="groupTwoOneBeatThree">
-                      <option defaultValue="">...</option>
-                        {/* <option defaultValue={amB}>AM</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        <option defaultValue={oooB}>OOO</option>
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option> */}
-                        {/* <option defaultValue={techBt}>tech</option> */}
-                        <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option>
+                      <option value="">...</option>
+                        {/* <option value={amB}>AM</option>
+                        <option value={funkB}>Funk</option>
+                        <option value={oooB}>OOO</option>
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option>
+                        <option value={bongoBt}>Bingo</option>
+                        <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option> */}
+                        {/* <option value={techBt}>tech</option> */}
+                        <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option>
                       </select>
                     </div>
                     {/* <div className="onebeat">
                       <select id="groupTwoOneBeatFour" name="groupTwoOneBeatFour">
-                        <option defaultValue={amB}>AM</option>
-                        <option defaultValue={funkB}>Funk</option>
-                        <option defaultValue={oooB}>OOO</option>
-                        <option defaultValue={rockB}>Rock</option>
-                        <option defaultValue={standB}>Stand</option>
-                        <option defaultValue={bongoBt}>Bingo</option>
-                        <option defaultValue={bongoTwoBt}>Bongo</option>
-                        <option defaultValue={clickBt}>Clicky</option>
-                        <option defaultValue={funkBt}>PutPat</option>
-                        <option defaultValue={rockBt}>AC</option>
-                        <option defaultValue={slowrockBt}>Slow</option>
-                        <option defaultValue={techBt}>tech</option>
-                        <option defaultValue={funkM}>Funk Melody</option>
-                        <option defaultValue={pianoM}>Piano</option>
-                        <option defaultValue={pixM}>Pixi</option>
+                        <option value={amB}>AM</option>
+                        <option value={funkB}>Funk</option>
+                        <option value={oooB}>OOO</option>
+                        <option value={rockB}>Rock</option>
+                        <option value={standB}>Stand</option>
+                        <option value={bongoBt}>Bingo</option>
+                        <option value={bongoTwoBt}>Bongo</option>
+                        <option value={clickBt}>Clicky</option>
+                        <option value={funkBt}>PutPat</option>
+                        <option value={rockBt}>AC</option>
+                        <option value={slowrockBt}>Slow</option>
+                        <option value={techBt}>tech</option>
+                        <option value={funkM}>Funk Melody</option>
+                        <option value={pianoM}>Piano</option>
+                        <option value={pixM}>Pixi</option>
                       </select>
                     </div> */}
                   </div>
