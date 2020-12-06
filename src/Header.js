@@ -37,7 +37,7 @@ class Header extends Component {
                         </ul>
                     </div>
                     <h1 className="font-effect-3d">Doc Ashen's</h1>
-                    <h2>Wonderful Music Contraption</h2>
+                    <h2 className="outline">Wonderful Music Contraption</h2>
                 </header>
             </div>
         );
