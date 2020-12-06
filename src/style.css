@@ -211,6 +211,7 @@ p {
     width: 75%;
     margin: 40px auto;
     font-size: 13px;
+    line-height: 25px;
 }
 header h2 {
     color: rgb(205, 83, 52);
