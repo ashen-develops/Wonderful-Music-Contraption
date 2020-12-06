@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import menuNav from './menu.png'
 import { Link } from 'react-router-dom'
 
 class Header extends Component {
@@ -14,8 +15,8 @@ class Header extends Component {
                 <header>
                     <div className="navBar">
                         <button 
-                            onClick={this.Toggle}
                             className="menu">
+                                <img src={menuNav} alt="menu-bar" onClick={this.Toggle} />
                         </button>
                         <ul className={this.state.toggle ?  "show-nav" : "nav-links"}>
                             <li>
@@ -35,7 +36,7 @@ class Header extends Component {
                             </li>
                         </ul>
                     </div>
-                    <h1>Doc Ashen's</h1>
+                    <h1 className="font-effect-3d">Doc Ashen's</h1>
                     <h2>Wonderful Music Contraption</h2>
                 </header>
             </div>

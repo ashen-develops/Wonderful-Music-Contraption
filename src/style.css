@@ -1,3 +1,7 @@
+/* ----------------------------Font-------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Lobster|Amatic+SC&effect=3d|shadow-multiple');
+
+
 /* ------------------------Header------------------------------------- */
 .link{
     color: white;
@@ -6,10 +10,15 @@
     margin: 5px auto 5px auto;
     text-align: center;
 }
-.menu{
-    background-color: #fff;
+.menu {
+    float: left;
     padding: 10px;
-    margin-right: 250px;
+    margin: 0 auto;
+}
+
+header img {
+    height: 20px;
+    width: 25px;
 }
 
 header li {
@@ -35,7 +44,7 @@ header .navBar {
     color: white;
     padding: 10px;
     list-style-type: none;
-    margin: 0;
+    /* margin: 0 auto 50px auto; */
 }
 
 header .nav-links {
@@ -46,7 +55,7 @@ header .nav-links {
 }
 
 header .show-nav {
-    height: 190px;
+    height: 210px;
 }
 
 /* -------------------Music Contraption---------------------------------------- */
@@ -193,11 +202,25 @@ header{
 h1{
     background-color: rgb(205, 83, 52);
     color: rgb(237, 174, 73);
-    padding: 10px; 
+    padding: 30px;
+    margin: 20px 0 0 0;
+    font-family: Lobster;
+    font-size: 40px;
 }
-header h2{
+p {
+    color: white;
+    width: 75%;
+    margin: 40px auto;
+}
+header h2 {
     color: rgb(205, 83, 52);
-    font-size: 20px;
+    font-size: 30px;
+    letter-spacing: 3px;
+    background-color: #edae49;
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    font-family: Amatic SC;
+    text-shadow:0px 6px 4px black, 0px 2px black, 1px 2px black;
 }
 main h3{
     color: rgb(213, 223, 229);
@@ -341,6 +364,45 @@ select {
     background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
     text-align: center;
 }
+.contraptionButtons{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.save {
+    margin: 20px 25px 20px 0;
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(127, 209, 185);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 9px rgb(205, 83, 52, 0.4);
+    zoom: 65%;
+}
+
+
+.play {
+    margin: 20px 0 20px 25px;
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(127, 209, 185);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 9px rgb(205, 83, 52, 0.4); 
+    zoom: 65%;
+}
 /* Media screen size */
 @media screen and (min-width: 768px) {
     header button {
@@ -360,6 +422,17 @@ select {
 @media all and (min-width: 600px){
     .center {
         zoom: 100%;
+    }
+    .onebeat {
+        margin: 13px;
+    }
+    .play{
+        zoom: 100%;
+        margin: 20px 0 20px 50px;
+    }
+    .save{
+        zoom: 100%;
+        margin: 20px 50px 20px 0;
     }
 
 }

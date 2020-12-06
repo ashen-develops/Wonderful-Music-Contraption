@@ -43,14 +43,14 @@ class Contraption extends React.Component {
       this.state = {
         toggle: false,
         pBtn: "Start",
-        valueOne: '...',
-        valueTwo: '...',
-        valueThree: '...',
-        valueFour: '...',
-        valueFive: '...',
-        valueSix: '...',
-        valueSeven: '...',
-        valueEight: '...'
+        groupOneTwoBeatOne: '...',
+        groupOneTwoBeatTwo: '...',
+        groupTwoOneBeatOne: '...',
+        groupTwoOneBeatTwo: '...',
+        groupTwoOneBeatThree: '...',
+        groupTwoOneBeatFour: '...',
+        groupThreeTwoBeatOne: '...',
+        groupThreeTwoBeatTwo: '...'
       }
     }
 
@@ -153,36 +153,11 @@ class Contraption extends React.Component {
       //Tone.Transport.Toggle
       console.log("handle submit works");
 
-      this.handlePlayAll(this.state.valueOne, this.state.valueTwo, this.state.valueThree, this.state.valueFour, this.state.valueFive, this.state.valueSix, this.state.valueSeven, this.state.valueEight)
+      this.handlePlayAll(this.state.groupOneTwoBeatOne, this.state.groupOneTwoBeatTwo, this.state.groupTwoOneBeatOne, this.state.groupTwoOneBeatTwo, this.state.groupTwoOneBeatThree, this.state.groupTwoOneBeatFour, this.state.groupThreeTwoBeatOne, this.state.groupThreeTwoBeatTwo)
       this.setState({
         toggle: !this.state.toggle
       })
     }
-    
-
-
-    // handlePlayGroupOneTwoBeatOne = (a) => {
-    //   Tone.start()
-    //   const buffer = new Tone.ToneAudioBuffer(a, () => {
-    //     const player = new Tone.Player({
-    //       url: buffer,
-    //       loop: false
-    //     }).toDestination();
-    //     player.sync().start(0).stop(5.294)
-    //     if (this.state.toggle){
-    //       console.log("transport stopped 1")
-    //       Tone.Transport.stop()
-    //     }
-    //     else if (this.state.toggle === false){
-    //       console.log("transport started 1")
-    //       Tone.Transport.start()
-    //     }
-    //     Tone.Transport.loop = true;
-    //     Tone.Transport.loopStart = 0;
-    //     Tone.Transport.loopEnd = 10.558;
-        
-    //   });
-    // };
 
     // handleSave = (e) => {
     //   e.preventDefault();
@@ -232,41 +207,10 @@ class Contraption extends React.Component {
     //       console.error({ error })
     //     })
     // }
-    handleChangeOne(e){
+    handleChange(e){
       Tone.start();
-      this.setState({ valueOne: e.currentTarget.value })
+      this.setState({ [e.currentTarget.name]: e.currentTarget.value })
     }
-    handleChangeTwo(e){
-      Tone.start();
-      this.setState({ valueTwo: e.currentTarget.value })
-    }
-    handleChangeThree(e){
-      Tone.start();
-      this.setState({ valueThree: e.currentTarget.value })
-    }
-    handleChangeFour(e){
-      Tone.start();
-      this.setState({ valueFour: e.currentTarget.value })
-    }
-    handleChangeFive(e){
-      Tone.start();
-      this.setState({ valueFive: e.currentTarget.value })
-    }
-    handleChangeSix(e){
-      Tone.start();
-      this.setState({ valueSix: e.currentTarget.value })
-    }
-    handleChangeSeven(e){
-      Tone.start();
-      this.setState({ valueSeven: e.currentTarget.value })
-    }
-    handleChangeEight(e){
-      Tone.start();
-      this.setState({ valueEight: e.currentTarget.value })
-    }
-
-    
-
       render() {
         // To figure out ------------
         return (
@@ -285,12 +229,12 @@ class Contraption extends React.Component {
                       <select
                         id="groupOneTwoBeatOne" 
                         name="groupOneTwoBeatOne"
-                        onChange={e => this.handleChangeOne(e)}
+                        onChange={e => this.handleChange(e)}
                         // value={this.state.selectValue} 
                         // onChange={this.handleChange}
                         >
                         {/* <option value={twoBopB}>{twoBopB}</option> */}
-                        <option id="..." value=".a.">...</option>
+                        <option id="..." value="...">...</option>
                         <option value={twoBopB}>Boppin</option>
                         <option value={twoBassB}>Bass Baby</option>
                         <option value={twoCoffeeB}>Coffee Shop</option>
@@ -310,7 +254,7 @@ class Contraption extends React.Component {
                     <div className="twobeat">
                       <select id="groupOneTwoBeatTwo" 
                       name="groupOneTwoBeatTwo"
-                      onChange={e => this.handleChangeTwo(e)}>
+                      onChange={e => this.handleChange(e)}>
                         <option id="..." value="...">...</option>
                         <option value={twoBopB}>Boppin'</option>
                         <option value={twoBassB}>Bass Baby</option>
@@ -334,7 +278,7 @@ class Contraption extends React.Component {
                     <div className="onebeat">
                       <select id="groupTwoOneBeatOne" 
                       name="groupTwoOneBeatOne"
-                      onChange={e => this.handleChangeThree(e)}>
+                      onChange={e => this.handleChange(e)}>
                         <option value="">...</option>
                         <option value={amB}>AM</option>
                         <option value={funkB}>Funk</option>
@@ -356,7 +300,7 @@ class Contraption extends React.Component {
                     <div className="onebeat">
                       <select id="groupTwoOneBeatTwo" 
                       name="groupTwoOneBeatTwo"
-                      onChange={e => this.handleChangeFour(e)}>
+                      onChange={e => this.handleChange(e)}>
                         <option value="">...</option>
                         <option value={amB}>AM</option>
                         <option value={funkB}>Funk</option>
@@ -379,7 +323,7 @@ class Contraption extends React.Component {
                     <div className="onebeat">
                       <select id="groupTwoOneBeatThree" 
                       name="groupTwoOneBeatThree"
-                      onChange={e => this.handleChangeFive(e)}>
+                      onChange={e => this.handleChange(e)}>
                         <option value="">...</option>
                         <option value={amB}>AM</option>
                         <option value={funkB}>Funk</option>
@@ -401,7 +345,7 @@ class Contraption extends React.Component {
                     <div className="onebeat">
                       <select id="groupTwoOneBeatFour" 
                       name="groupTwoOneBeatFour"
-                      onChange={e => this.handleChangeSix(e)}>
+                      onChange={e => this.handleChange(e)}>
                         <option value="">...</option>
                         <option value={amB}>AM</option>
                         <option value={funkB}>Funk</option>
@@ -425,7 +369,7 @@ class Contraption extends React.Component {
                     <div className="twobeat">
                       <select id="groupThreeTwoBeatOne" 
                       name="groupThreeTwoBeatOne"
-                      onChange={e => this.handleChangeSeven(e)}>
+                      onChange={e => this.handleChange(e)}>
                         <option value="">...</option>
                         <option value={twoVocalBa}>Vocal: Baa</option>
                         <option value={twoVocalIndig}>Vocal: Indigo</option>
@@ -435,7 +379,7 @@ class Contraption extends React.Component {
                     <div className="twobeat">
                       <select id="groupThreeTwoBeatTwo" 
                       name="groupThreeTwoBeatTwo"
-                      onChange={e => this.handleChangeEight(e)}>
+                      onChange={e => this.handleChange(e)}>
                         <option value="">...</option>
                         <option value={twoVocalBa}>Vocal: Baa</option>
                         <option value={twoVocalIndig}>Vocal: Indigo</option>
@@ -444,12 +388,16 @@ class Contraption extends React.Component {
                     </div>
                   </div>
                 </div>
+
+                <div className="contraptionButtons">
     
-                <div className="saveButton">
-                  <button className="save">Save</button>
-                </div>
-                <div className="playButton">
-                  <input type="submit" value={this.state.pBtn} />
+                  <div className="saveButton">
+                    <button className="save">Save</button>
+                  </div>
+                  <div className="playButton">
+                    <input className="play" type="submit" value={this.state.pBtn} />
+                  </div>
+
                 </div>
               </form>
               <h3>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page (which the stop button will do for you until I can figure out how to not have one million sounds play at once everytime you start up a stopped procedure).</h3>
