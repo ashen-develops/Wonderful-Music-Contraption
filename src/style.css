@@ -82,6 +82,7 @@ header .show-nav {
     justify-content: center;
     align-items: center;
     margin: 50px;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,-1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
   }
   
 .center {
@@ -137,8 +138,11 @@ svg {
   
 .btn span {
     /* color: rgb(213, 223, 229); */
-    font-size: 18px;
-    font-weight: 100;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: Amatic SC;
+    letter-spacing: 2px;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,-1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
 .signup{
@@ -378,6 +382,7 @@ select {
     margin: 20px 25px 20px 0;
     display: inline-block;
     padding: 15px 50px;
+    font-family: Amatic SC;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
@@ -397,6 +402,7 @@ select {
     margin: 20px 0 20px 25px;
     display: inline-block;
     padding: 15px 50px;
+    font-family: Amatic SC;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
@@ -412,6 +418,7 @@ select {
 }
 /* Media screen size */
 @media screen and (min-width: 768px) {
+
     header button {
         display: none;
     }
@@ -448,9 +455,35 @@ select {
         zoom: 90%;
         margin: 20px 50px 20px 0;
     }
+    .Landing{
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto 50px auto;
+        justify-content: center;
+    }
+    main a.abtn {
+        margin: 40px auto 0 auto;
+        padding: 45px 0;
+    }
     p {
         font-size: 15px;
         width: 60%;
+    }
+    .login {
+        display: flex;
+        flex-direction: column;
+        color: rgb(213, 223, 229);
+        margin: 5px 185px auto 0;
+        max-width: 550px;
+        width: 90%;
+    }
+    
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 75px 140px auto auto;
     }
 
 }

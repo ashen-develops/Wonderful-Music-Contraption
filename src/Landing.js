@@ -33,21 +33,23 @@ class Landing extends Component {
     }
     render() {
         return(
-            <div className="Landing">
+            <div>
 
-                <main>
-                    <div className="signup">
-                        {/* <!-- on click in JS this button will take you to the sign up page --> */}
-                        <Link className="signbtn abtn" to="/signup">
-                            Sign Up
-                        </Link>
-                    </div>
+                <main className="Landing">
+                    <div className="landing-buttons">
+                        <div className="signup">
+                            {/* <!-- on click in JS this button will take you to the sign up page --> */}
+                            <Link className="signbtn abtn" to="/signup">
+                                Sign Up
+                            </Link>
+                        </div>
 
-                    <div className="try">
-                        {/* <!-- on click in JS this button will take you to the song maker page --> */}
-                        <Link className="trybtn abtn" to="/contraption">
-                            Try out The Wonderous Contraption
-                        </Link>
+                        <div className="try">
+                            {/* <!-- on click in JS this button will take you to the song maker page --> */}
+                            <Link className="trybtn abtn" to="/contraption">
+                                Try out The Wonderous Contraption
+                            </Link>
+                        </div>
                     </div>
 
                     <div className="login-form">
