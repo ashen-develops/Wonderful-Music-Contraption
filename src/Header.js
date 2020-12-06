@@ -20,19 +20,19 @@ class Header extends Component {
                         </button>
                         <ul className={this.state.toggle ?  "show-nav" : "nav-links"}>
                             <li>
-                                <Link className="link" to="/home">Home</Link>
+                                <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/home">Home</Link>
                             </li>
                             <li>
-                                <Link className="link" to="/contraption">The Machine</Link>
+                                <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/contraption">The Machine</Link>
                             </li>
                             <li>
-                                <Link className="link" to="/loops">My Loops</Link>
+                                <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/loops">My Loops</Link>
                             </li>
                             <li>
-                                <Link className="link" to="/social">Social Hub</Link>
+                                <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/social">Social Hub</Link>
                             </li>
                             <li>
-                                <Link className="link" to="/support">Support</Link>
+                                <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/support">Support</Link>
                             </li>
                         </ul>
                     </div>
