@@ -65,7 +65,6 @@ header .show-nav {
     width: 90%;
     margin: 10px auto;
     border-radius: 10px;
-    color: rgb
 
 }
 
@@ -389,6 +388,7 @@ select {
     border-radius: 15px;
     box-shadow: 5px 9px rgb(205, 83, 52, 0.4);
     zoom: 65%;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,-1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
 
@@ -407,6 +407,7 @@ select {
     border-radius: 15px;
     box-shadow: 5px 9px rgb(205, 83, 52, 0.4); 
     zoom: 65%;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,-1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 /* Media screen size */
 @media screen and (min-width: 768px) {
@@ -418,6 +419,9 @@ select {
         height: auto;
         display: flex;
     }
+    header .navBar {
+        padding: 0;
+    }
 
     header li {
         padding: 0 15px;
@@ -425,6 +429,10 @@ select {
 }
 
 @media all and (min-width: 600px){
+    .music-box{
+        zoom: 1.25;
+        width: 100%;
+    }
     .center {
         zoom: 100%;
     }
@@ -432,12 +440,16 @@ select {
         margin: 13px;
     }
     .play{
-        zoom: 100%;
+        zoom: 90%;
         margin: 20px 0 20px 50px;
     }
     .save{
-        zoom: 100%;
+        zoom: 90%;
         margin: 20px 50px 20px 0;
+    }
+    p {
+        font-size: 15px;
+        width: 60%;
     }
 
 }
