@@ -1,24 +1,76 @@
 # Doc Ashen's Wonderful Music Contraption
-This app will allow a user to create an account/ login, and then make songs out of pre-recorded loops of music. 
-
-## Working Prototype
-You can access a working prototype of the react app here: placeholder
-
-## User Stories
-This app is for any user, with logged in users being able to access more features.
-
-## Landing/ Login Page
-
-### Sign Up Page
-
-### Home Page
-
-### Song Maker Page
-
-### My Saved Loops Page
+This app will allow a user to create an account/ login, and then make songs out of pre-recorded loops of music.
 
 
-## Wireframes
+
+### 1. Working Prototype
+You can access a working prototype of the React app here: https://wonderful-music-contraption.vercel.app/ and Node app here: https://wonderful-music-contraption.herokuapp.com/
+
+
+
+### 2. User Stories
+This app is for two types of users: a visitor and a logged-in user
+
+###### Landing Page (Importance - High) (Est: 1h)
+* As a visitor
+    * I can sign up, or log in
+    * If I sign up I'll be able to log in later
+    * If I log in, I'll be registered as a logged in user
+    * I can try out the main feature of the app (making music) without being able to save
+    * and without being able to use social features
+
+######  Sign Up (Importance - High)  (Est: 3h)
+* As a visitor
+    * I want to register to use this app
+    * So I can create a personal account.
+
+######  Home Page (Importance - Medium)  (Est: 2h)
+* As a logged-in user,
+    * I want to be able to preview the content of the app,
+    * So i can decide what section I want to navigate to.
+
+###### Song Maker (Importance - High) (Est: 5h)
+* as a visitor
+    * I can sign up, or log in
+    * If I sign up I'll be able to log in later
+    * If I log in, I'll be registered as a logged in user
+    * I can try out the main feature of the app (making music) without being able to save
+    * and without being able to use social features
+
+######  My Saved Songs (Importance - Medium)  (Est: 3h)
+* As a logged-in user,
+    * I want to register to use this app
+    * So I can create a personal account.
+
+######  Social Hub (Importance - Small)  (Est: 2h)
+* As a logged-in user,
+* I want to be able to preview the content of the app,
+* So i can decide what section I want to navigate to.
+
+
+
+### 3. Functionality
+The app's functionality includes:
+* Every User has the ability to
+    * create an account
+    * use the app to play with the sound files
+    * view other people's sound file combinations
+* Every logged in User has the added ability to
+    * save their music creations to the database
+    * rate other users music creations
+    * post their own saved combinations to the social hub
+
+
+
+
+### 4. Technology
+* Front-End: HTML5, CSS3, JavaScript ES6, React
+* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, PostgreSQL
+* Development Environment: Heroku, DBeaver, Vercel
+
+
+
+### 5. Wireframes
 
 Landing/Login Page
 :------------------:
@@ -43,70 +95,6 @@ Saved Loops Page
 Social Page
 :------------------:
 <img src="readme-images/Social.jpg" />
-
-
-
-
-
-
-
-
-
-
-# Capstone Project Title (to do now)
-One line description of what this app is doing and who is it for
-
-
-
-### 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://wonderful-music-contraption.herokuapp.com/
-
-
-
-### 2. User Stories (to do now)
-This app is for two types of users: a visitor and a logged-in user
-
-###### (Example) Landing Page (Importance - High) (Est: 1h)
-* as a visitor
-* I want to understand what I can do with this app (or sign up, or log in)
-* so I can decide if I want to use it
-
-###### (Example) Login Page (Importance - High) (Est: 3h)
-* As a returning register user
-* I want to enter my password and username to use this app,
-* So I can have access to my account.
-
-###### (Example) Sign Up (Importance - High)  (Est: 3h)
-* As a visitor
-* I want to register to use this app
-* So I can create a personal account.
-
-###### (Example) Home Page (Importance - Medium)  (Est: 2h)
-* As a logged-in user,
-* I want to be able to preview the content of the app,
-* So i can decide what section I want to navigate to.
-
-
-
-### 3. Functionality (to do now)
-The app's functionality includes:
-* (Example) Every User has the ability to create an account
-
-
-
-### 4. Technology (done)
-* Front-End: HTML5, CSS3, JavaScript ES6, React
-* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
-* Development Environment: Heroku, DBeaver
-
-
-
-### 5. Wireframes (to do now)
-(Example) Landing Page
-:-------------------------:
-![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
-Register Page
-![Register Page](/github-images/wireframes/register-page-wireframe.png)
 
 
 
@@ -156,9 +144,9 @@ Register Page
 
 
 
-### 10. Development Roadmap (to do later)
-This is v1.0 of the app, but future enhancements are expected to include:
-* (Example) add more functionality
+### 10. Development Roadmap
+This is v0.5 of the app, but future enhancements are expected to include:
+* add more functionality
 
 
 
@@ -167,7 +155,7 @@ Use command line to navigate into the project folder and run the following in te
 
 ##### Local React scripts
 * To install the react project ===> npm install
-* To run react (on port 3000) ===> npm start
+* To run react (on port 8000) ===> npm start
 * To run tests ===> npm run test
 
 ##### Local Node scripts
