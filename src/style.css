@@ -434,6 +434,9 @@ select {
     header li {
         padding: 0 15px;
     }
+    .Landing{
+        zoom: 1.5;
+    }
 }
 
 @media all and (min-width: 600px){
