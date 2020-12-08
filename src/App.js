@@ -7,6 +7,7 @@ import Landing from './Landing';
 import Home from './Home';
 import Contraption from './Contraption';
 import SignUp from './SignUp';
+import config from './config'
 // import MultiPlayer from "./MultiPlayer";
 
 function App() {
