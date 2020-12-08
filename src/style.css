@@ -447,6 +447,7 @@ select {
         position: relative;
         visibility: visible;
         top: 0px;
+        padding: 0;
     }
     header .desktop-link {
         color: white;
