@@ -217,7 +217,7 @@ h1{
     padding: 30px;
     margin: 20px 0 0 0;
     font-family: Lobster;
-    font-size: 40px;
+    font-size: 70px;
 }
 p {
     color: white;
@@ -228,7 +228,7 @@ p {
 }
 header h2 {
     color: rgb(205, 83, 52);
-    font-size: 30px;
+    font-size: 50px;
     letter-spacing: 3px;
     background-color: #edae49;
     margin: 0 auto 20px auto;
@@ -453,6 +453,7 @@ select {
         color: white;
         margin: 10px;
         width: 100%;
+        font-size: 18px;
         
     }
 
