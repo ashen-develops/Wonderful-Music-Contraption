@@ -38,6 +38,23 @@ class Header extends Component {
                     </div>
                     <h1 className="font-effect-3d">Doc Ashen's</h1>
                     <h2 className="outline">Wonderful Music Contraption</h2>
+                    <ul className="desktop-nav">
+                            <li>
+                                <Link className="desktop-link" to="/home">Home</Link>
+                            </li>
+                            <li>
+                                <Link className="desktop-link" to="/contraption">The Machine</Link>
+                            </li>
+                            <li>
+                                <Link className="desktop-link" to="/loops">My Loops</Link>
+                            </li>
+                            <li>
+                                <Link className="desktop-link" to="/social">Social Hub</Link>
+                            </li>
+                            <li>
+                                <Link className="desktop-link" to="/support">Support</Link>
+                            </li>
+                        </ul>
                 </header>
             </div>
         );

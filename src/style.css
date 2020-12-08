@@ -15,6 +15,15 @@
     padding: 10px;
     margin: 0 auto;
 }
+header .desktop-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    visibility: hidden;
+}
 
 header img {
     height: 20px;
@@ -429,6 +438,21 @@ select {
     }
     header .navBar {
         padding: 0;
+    }
+    header .desktop-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
+        visibility: visible;
+        top: 0px;
+    }
+    header .desktop-link {
+        color: white;
+        margin: 10px;
+        width: 100%;
+        
     }
 
     header li {
