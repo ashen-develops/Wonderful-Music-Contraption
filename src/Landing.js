@@ -7,9 +7,21 @@ class Landing extends Component {
 
         this.state = {
             hidden: true,
+            user: '',
             password: ''
         };
     }
+    validateloginPassword(inputloginPassword) {
+        let outputloginPassword = inputloginPassword;
+        // at least one number, one lowercase and one uppercase letter
+        // at least eight characters that are letters, numbers or the underscore
+        let loginPasswordformat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
+    
+        if (!inputloginPassword.match(loginPasswordformat)) {
+          outputloginPassword = "";
+        }
+        return outputloginPassword;
+      }
 
     handlePasswordChange(password) {
         console.log('password', password)
