@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 import React from "react";
-// import config from './config'
+import config from './config'
 import * as Tone from "tone";
 
 import twoBopB from "./Media/Backing/2bop_back160.mp3";
@@ -50,7 +50,8 @@ class Contraption extends React.Component {
         groupTwoOneBeatThree: '...',
         groupTwoOneBeatFour: '...',
         groupThreeTwoBeatOne: '...',
-        groupThreeTwoBeatTwo: '...'
+        groupThreeTwoBeatTwo: '...',
+        sharable: false
       }
     }
 
@@ -159,54 +160,41 @@ class Contraption extends React.Component {
       })
     }
 
-    // handleSave = (e) => {
-    //   e.preventDefault();
-    //   //Tone.Transport.Toggle
-    //   console.log("handle save loads");
+    handleSave = (e) => {
+      console.log(this.state)
+      e.preventDefault();
+      const music = {
+        group_one_two_beat_one: this.state.groupOneTwoBeatOne,
+        group_one_two_beat_two: this.state.groupOneTwoBeatTwo,
+        group_two_one_beat_one: this.state.groupTwoOneBeatOne,
+        group_two_one_beat_two: this.state.groupTwoOneBeatTwo,
+        group_two_one_beat_three: this.state.groupTwoOneBeatThree,
+        group_two_one_beat_four: this.state.groupTwoOneBeatFour,
+        group_three_two_beat_one: this.state.groupThreeTwoBeatOne,
+        group_three_two_beat_two: this.state.groupThreeTwoBeatTwo,
+        sharable: this.state.sharable, 
+      };
+      fetch(`${config.API_ENDPOINT}/music`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(music),
+      })
+        .then((res) => {
+          if (!res.ok) return res.json().then((e) => Promise.reject(e));
+          return res.json();
+        })
+        .then((mus) => {
+          this.context.addUser(mus);
+          this.props.history.push(`/api/music/${mus.id}`);
+          window.location = "/home";
+        })
+        .catch((error) => {
+          console.error({ error });
+        });
 
-    //   //create an object to store the search filters
-    //   const testData = {};
-  
-    //   //get all the from data from the form component
-    //   const formData = new FormData(e.target);
-  
-    //   //for each of the keys in form data populate it with form value
-    //   for (let value of formData) {
-    //     testData[value[0]] = value[1];
-    //   }
-    //   const {
-    //     groupOneTwoBeatOne,
-    //     groupOneTwoBeatTwo,
-    //     groupTwoOneBeatOne,
-    //     groupTwoOneBeatTwo,
-    //     groupTwoOneBeatThree,
-    //     groupTwoOneBeatFour,
-    //     groupThreeTwoBeatOne,
-    //     groupThreeTwoBeatTwo
-    //   } = testData;
-    //   const folder = {
-    //     foldername: e.target['folder-name'].value
-    //   }
-    //   fetch(`${config.API_ENDPOINT}/folders`, {
-    //     method: 'POST',
-    //     headers: {
-    //       'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(folder),
-    //   })
-    //     .then(res => {
-    //       if (!res.ok)
-    //         return res.json().then(e => Promise.reject(e))
-    //       return res.json()
-    //     })
-    //     .then(folder => {
-    //       this.context.addFolder(folder)
-    //       this.props.history.push(`/folder/${folder.id}`)
-    //     })
-    //     .catch(error => {
-    //       console.error({ error })
-    //     })
-    // }
+    };
     handleChange(e){
       Tone.start();
       this.setState({ [e.currentTarget.name]: e.currentTarget.value })
@@ -392,7 +380,7 @@ class Contraption extends React.Component {
                 <div className="contraptionButtons">
     
                   <div className="saveButton">
-                    <button className="save">Save</button>
+                    <button onClick={this.handleSave} className="save">Save</button>
                   </div>
                   <div className="playButton">
                     <input className="play" type="submit" value={this.state.pBtn} />
