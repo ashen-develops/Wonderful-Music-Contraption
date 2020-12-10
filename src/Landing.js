@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AuthApiService from "./services/auth-api-service";
 
 class Landing extends Component {
     constructor(props) {
@@ -23,26 +24,38 @@ class Landing extends Component {
         return outputloginPassword;
       }
 
-    handlePasswordChange(password) {
-        console.log('password', password)
-        console.log(this.state)
-        this.setState({ password: password });
-    }
 
     toggleShow() {
         this.setState({ hidden: !this.state.hidden });
     }
 
-    componentDidMount() {
-        if (this.props.password) {
-            this.setState({ password: this.props.password });
-        }
-    }
+    handleChange(e) {
+        this.setState({ [e.currentTarget.name]: e.currentTarget.value });
+        console.log(this.state);
+      }
     
-    handleSubmit = (event) => {
-        event.preventDefault()
-        window.location = '/home'
-    }
+      handleSubmit = (event) => {
+        event.preventDefault();
+    
+        const { user, password } = event.target
+    
+        AuthApiService.postLogin({
+          userName: user.value,
+          password: password.value,
+    
+        })
+    
+          .then(res => {
+            user.value = ''
+            password.value = ''
+            window.location = '/home'
+    
+    
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      }
     render() {
         return(
             <div>
@@ -69,6 +82,8 @@ class Landing extends Component {
                         <form className="login" onSubmit={this.handleSubmit}>
                             <label htmlFor="user">Username:</label>
                             <input
+                                onChange={(e) => this.handleChange(e)}
+                                value={this.state.user}
                                 type="text" 
                                 id="user" 
                                 name="user" 
@@ -77,7 +92,7 @@ class Landing extends Component {
                                 <input
                                     type={this.state.hidden ? 'password' : 'text'}
                                     value={this.state.password}
-                                    onChange={e => this.handlePasswordChange(e.target.value)}
+                                    onChange={(e) => this.handleChange(e)}
                                     id="password"
                                     name="password" 
                                     />

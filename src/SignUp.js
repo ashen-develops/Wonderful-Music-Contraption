@@ -1,14 +1,15 @@
 import React from "react";
 import config from "./config";
 import ApiContext from "./ApiContext";
-import AuthApiService from "./services/auth-api-service";
+
 
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: '',
-      password: '',
+      hidden: true,
+      user: "",
+      password: "",
     };
   }
   static defaultProps = {
@@ -23,13 +24,10 @@ class SignUp extends React.Component {
   //   }
 
   handleSubmit = (e) => {
-    // console.log(this.state)
-    // e.preventDefault();
-    // window.location = '/home'
     e.preventDefault();
     const user = {
       user_name: this.state.user,
-      password: this.state.password
+      password: this.state.password,
     };
     fetch(`${config.API_ENDPOINT}/users`, {
       method: "POST",
@@ -45,12 +43,16 @@ class SignUp extends React.Component {
       .then((user) => {
         this.context.addUser(user);
         this.props.history.push(`/api/users/${user.id}`);
-        window.location = '/home'
+        window.location = "/home";
       })
       .catch((error) => {
         console.error({ error });
       });
   };
+
+  toggleShow() {
+    this.setState({ hidden: !this.state.hidden });
+  }
 
   handleChange(e) {
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
@@ -73,11 +75,21 @@ class SignUp extends React.Component {
               <label htmlFor="password">Create Password:</label>
               <input
                 onChange={(e) => this.handleChange(e)}
-                type="password"
+                type={this.state.hidden ? "password" : "text"}
+                value={this.state.password}
                 id="password"
                 name="password"
               />
-              {/* <!-- <input type="submit" value="Sign Up"> --> */}
+              <label htmlFor="show-pwd">
+                <input
+                  className="show-pwd"
+                  type="checkbox"
+                  id="show-pwd"
+                  onChange={() => this.toggleShow()}
+                />
+                Show Password
+              </label>
+
               <div className="container">
                 <div className="center">
                   <button onClick={(e) => this.handleSubmit(e)} className="btn">
