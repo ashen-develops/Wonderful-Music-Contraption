@@ -28,12 +28,12 @@ class Header extends Component {
                             <li>
                                 <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/loops">My Loops</Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/social">Social Hub</Link>
                             </li>
                             <li>
                                 <Link onClick={this.Toggle} className={this.state.toggle ? "link" : "show-nav"} to="/support">Support</Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <h1 className="font-effect-3d">Doc Ashen's</h1>
@@ -48,12 +48,12 @@ class Header extends Component {
                             <li>
                                 <Link className="desktop-link" to="/loops">My Loops</Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link className="desktop-link" to="/social">Social Hub</Link>
                             </li>
                             <li>
                                 <Link className="desktop-link" to="/support">Support</Link>
-                            </li>
+                            </li> */}
                         </ul>
                 </header>
             </div>
