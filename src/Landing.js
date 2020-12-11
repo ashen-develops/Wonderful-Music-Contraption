@@ -74,7 +74,8 @@ class Landing extends Component {
 
           <div className="login-form">
             <h2>Login</h2>
-            <h3>If you're just here to demo the app you can just use the login u-demo : p-password</h3>
+            <p>If you're just here to demo the app you can just use the login:</p>
+            <p>u-demo : p-password</p>
             <form className="login" onSubmit={this.handleSubmit}>
               <label htmlFor="user">Username:</label>
               <input
