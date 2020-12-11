@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AuthApiService from "./services/auth-api-service";
-import TokenService from "./services/token-service"
 
 class Landing extends Component {
   constructor(props) {
@@ -44,18 +43,29 @@ class Landing extends Component {
       password: password.value,
     })
 
-    .then((res) => {
-        if (!res.status == 200) {
-          return res.json().then((error) => Promise.reject(error));
-        }
-        user.value = '';
-        password.value = '';
-        TokenService.saveAuthToken(res.authToken);
+      .then((res) => {
+        user.value = "";
+        password.value = "";
+        window.location = "/home";
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+//       .then((res) => {
+//         if (!res.status == 200) {
+//           return res.json().then((error) => Promise.reject(error));
+//         }
+//         username.value = '';
+//         password.value = '';
+//         TokenService.saveAuthToken(res.authToken);
+//         props.onLoginSuccess();
+//       })
+//       .catch((res) => {
+//         setError({ error: res.error });
+//       });
+//   };
 
   render() {
     return (

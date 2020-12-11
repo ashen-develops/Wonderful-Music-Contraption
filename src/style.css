@@ -425,6 +425,9 @@ select {
     transform: scale(0.65);
     text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,-1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
+.Landing p {
+    font-size: 14px;
+}
 /* Media screen size */
 @media screen and (min-width: 768px) {
 
@@ -459,10 +462,6 @@ select {
 
     header li {
         padding: 0 15px;
-    }
-    .Landing{
-        transform: scale(1.5);
-        transform: 0 0;
     }
 }
 
