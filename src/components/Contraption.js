@@ -224,8 +224,6 @@ class Contraption extends React.Component {
             <main>
               <div>
                 <h2>Make Some Noise!</h2>
-                <p>Hello dear user! This app is very much so a WIP and has some quirks (such as my recommendation to turn down you're volume because I don't have every track's volume tweaked yet), however I would like to thank you for visiting my site and trying out my Wonderful Music Contraption. I hope to update this to a completely satisfying and viceral music experience, but for now enjoy what's here. 
-                </p>
 
               </div>
               <form id="music-form" onSubmit={this.handleSubmitAll}>
@@ -406,7 +404,7 @@ class Contraption extends React.Component {
                       <input type="submit" onClick={this.handleSave} className="save" value="Save" />
                     </form>
               </div> */}
-              <p>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page (which the stop button will do for you until I can figure out how to not have one million sounds play at once everytime you start up a stopped procedure).</p>
+
             </main>
           </div>
       );
