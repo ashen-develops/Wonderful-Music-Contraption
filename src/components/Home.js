@@ -28,9 +28,9 @@ class Home extends Component {
                 
             <div className="how-to">
                 <h2>How To Use The App</h2>
-                <p>Hello dear user! This app is very much so a WIP and has some quirks (such as my recommendation to turn down you're volume because I don't have every track's volume tweaked yet), however I would like to thank you for visiting my site and trying out my Wonderful Music Contraption. I hope to update this to a completely satisfying and viceral music experience, but for now enjoy what's here. </p>
-                <h3>Description</h3>
-                <p>I'm baby roof party gentrify vaporware waistcoat crucifix celiac coloring book. Chambray hashtag kale chips kogi aesthetic portland meditation. Wolf blue bottle polaroid, crucifix butcher forage hella intelligentsia brunch kickstarter jean shorts bicycle rights roof party chia. Microdosing dreamcatcher yr ugh leggings ethical. Cloud bread chia post-ironic selvage hell of forage chillwave.</p>
+                <p>Hello dear user! I would like to thank you for visiting my site and trying out my Wonderful Music Contraption. It's pretty straight forward; if you're logged in (either with a demo account or your own personal account) then you just click the music button below and get creating </p>
+                <h3>Working The Contraption</h3>
+                <p>Basically the "Music Contraption" consists of a bunch of form input select boxes. Each large select box represents 2 beats, and each small one represents 1 beat. Boxes on top of eachother will play music on top of eachother as well, likewise, boxes after one another (left or right) will play in that order (left to right). Some combos will make your ears thank you for making such an amazing sound, while some combos will be telling you to hit the stop button as quickly as possible. Anyways! Have fun and good luck!</p>
             </div>
 
             <div className="music-btn">

@@ -96,6 +96,9 @@ class Landing extends Component {
                 Try out The Wonderous Contraption
               </Link>
             </div>
+            <div>
+              <p className="req">Must log in (either with your account or dummy account) to use the music contraption</p>
+            </div>
           </div>
 
           <div className="login-form">
