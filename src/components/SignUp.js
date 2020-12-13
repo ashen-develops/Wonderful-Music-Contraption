@@ -1,6 +1,6 @@
 import React from "react";
-import config from "./config";
-import ApiContext from "./ApiContext";
+import config from "../config";
+import ApiContext from "../ApiContext";
 
 
 class SignUp extends React.Component {

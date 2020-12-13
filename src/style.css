@@ -63,9 +63,9 @@ header .nav-links {
   font-weight: bold;
 }
 
-header .show-nav {
+/* header .show-nav {
     height: 210px;
-}
+} */
 
 /* -------------------Music Contraption---------------------------------------- */
 .music-box{
@@ -388,7 +388,7 @@ select {
     margin: auto;
 }
 .save {
-    margin: 20px 25px 20px 0;
+    margin: 20px auto 20px auto;
     display: inline-block;
     padding: 15px 50px;
     font-family: Amatic SC;
@@ -408,7 +408,7 @@ select {
 
 
 .play {
-    margin: 20px 0 20px 25px;
+    margin: 20px auto 20px auto;
     display: inline-block;
     padding: 15px 50px;
     font-family: Amatic SC;
@@ -428,11 +428,19 @@ select {
 .Landing p {
     font-size: 14px;
 }
+.logged-in-btn{
+    display: none;
+}
 /* Media screen size */
 @media screen and (min-width: 768px) {
 
-    header button {
+    .menu {
         display: none;
+    }
+
+    .logged-in-btn {
+        display: flex;
+        float:none
     }
 
     header .links {
@@ -478,11 +486,11 @@ select {
     }
     .play{
         transform: scale(0.9);
-        margin: 20px 0 20px 50px;
+        margin: 20px auto 20px auto;
     }
     .save{
         transform: scale(0.9);
-        margin: 20px 50px 20px 0;
+        margin: 20px auto 20px auto;
     }
     .Landing{
         display: flex;

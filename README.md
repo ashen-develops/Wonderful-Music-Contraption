@@ -129,18 +129,34 @@ Social Page
     * date_last_edited (timestamp of when the user last saved to account)
 
 
-### 8. API Documentation (to do later)
+### 8. API Documentation
 API Documentation details:
 * (Example) get all users
 
 
 
 ### 9. Screenshots (to do later)
-(Example) Landing Page
-:-------------------------:
-![Landing Page](/github-images/screenshots/landing-page-screenshot.png)
-Register Page
-![Register Page](/github-images/screenshots/register-page-screenshot.png)
+Landing/Login Page
+:------------------:
+<img src="screenshots/Landing.PNG" />
+
+Sign Up Page
+:------------------:
+<img src="screenshots/signUp.PNG" />
+
+Song Maker Page
+:------------------:
+<img src="screenshots/contraption.PNG" />
+
+Home Page
+:------------------:
+<img src="screenshots/home.PNG" />
+
+Saved Loops Page
+:------------------:
+<img src="screenshots/myLoops.PNG" />
+
+
 
 
 

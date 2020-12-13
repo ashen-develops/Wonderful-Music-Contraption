@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import AuthApiService from "./services/auth-api-service";
+import AuthApiService from "../services/auth-api-service";
+import TokenService from "../services/token-service"
 
 class Landing extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      userName: {
+          value: ''
+      },
+      password: {
+          value: ''
+      },
       hidden: true,
-      user: "",
-      password: "",
+      LogInUserID: 0,
+      error: null,
+      params: {},
+      formValidationError: ''
     };
   }
   validateloginPassword(inputloginPassword) {
@@ -30,44 +39,46 @@ class Landing extends Component {
 
   handleChange(e) {
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    const { user, password } = event.target;
-
+  handleSubmit = (e) => {
+    e.preventDefault() 
+    const { userName, password } = e.target
+    // console.log(userName, password)
+    // console.log('username:', userName.value, 'password:', password.value) 
     AuthApiService.postLogin({
-      userName: user.value,
-      password: password.value,
+        user_name: userName.value,
+        password: password.value,
     })
 
-      .then((res) => {
-        user.value = "";
-        password.value = "";
-        window.location = "/home";
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+        .then(res => {
+            // console.log('response ID', res)
+            console.log(this.state)
+            userName.value = ''
+            password.value = ''
+            TokenService.saveAuthToken(res.authToken)
+            TokenService.saveUserId(res.userId)
+            window.location = '/home'
+        })
+        .then(res => {
+            console.log('response:', res)
+        })
+        .catch(err => {
+            console.log(err) 
+        }) 
+  }
 
-//       .then((res) => {
-//         if (!res.status == 200) {
-//           return res.json().then((error) => Promise.reject(error));
-//         }
-//         username.value = '';
-//         password.value = '';
-//         TokenService.saveAuthToken(res.authToken);
-//         props.onLoginSuccess();
-//       })
-//       .catch((res) => {
-//         setError({ error: res.error });
-//       });
-//   };
 
   render() {
+    let showErrorOutput = ''
+    if (this.state.formValidationError) {
+        showErrorOutput = <div className='alert alert-info'>
+            <i className='fas fa-info'></i>
+            <strong>Info</strong>
+            {this.state.formValidationError}
+        </div>
+    }
     return (
       <div>
         <main className="Landing">
@@ -88,7 +99,11 @@ class Landing extends Component {
           </div>
 
           <div className="login-form">
+
             <h2>Login</h2>
+
+            {showErrorOutput}
+
             <p>If you're just here to demo the app you can just use the login:</p>
             <p>u-demo : p-password</p>
             <form className="login" onSubmit={this.handleSubmit}>
@@ -97,8 +112,8 @@ class Landing extends Component {
                 onChange={(e) => this.handleChange(e)}
                 value={this.state.user}
                 type="text"
-                id="user"
-                name="user"
+                id="userName"
+                name="userName"
               />
               <label htmlFor="password">Password:</label>
               <input

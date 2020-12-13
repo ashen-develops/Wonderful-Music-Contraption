@@ -1,43 +1,46 @@
 /* eslint-disable eqeqeq */
 import React from "react";
-import config from './config'
+import config from '../config'
 import * as Tone from "tone";
+import TokenService from '../services/token-service'
+import ApiContext from '../ApiContext'
 
-import twoBopB from "./Media/Backing/2bop_back160.mp3";
-import twoFunkB from "./Media/Backing/2funk_back160.mp3";
+import twoBopB from "../Media/Backing/2bop_back160.mp3";
+import twoFunkB from "../Media/Backing/2funk_back160.mp3";
 // import twoSunB from "./Media/Backing/2sun_back.mp3";
-import twoBassB from "./Media/Backing/2bop_back160.mp3";
-import twoCoffeeB from "./Media/Beats/bongo_beat160.mp3";
-import twoFlourishB from "./Media/Backing/2sun_back.mp3";
-import amB from "./Media/Backing/am_back160.mp3";
-import funkB from "./Media/Backing/funk_back160.mp3";
-import oooB from "./Media/Backing/ooo_back160.mp3";
-import rockB from "./Media/Backing/rock_back160.mp3";
-import standB from "./Media/Backing/stand_back160.mp3";
-import bongoBt from "./Media/Beats/bongo_beat160.mp3";
-import bongoTwoBt from "./Media/Beats/bongo2_beat160.mp3";
-import clickBt from "./Media/Beats/click_beat160.mp3";
-import funkBt from "./Media/Beats/funk_beat160.mp3";
-import rockBt from "./Media/Beats/rock_beat160.mp3";
-import slowrockBt from "./Media/Beats/slowrock_beat160.mp3";
-import techBt from "./Media/Beats/tech_beat160.mp3";
-import twoAtmosM from "./Media/Melody/2atmos_melody160.mp3";
-import twoFunM from "./Media/Melody/2fun_melody.mp3";
-import twoGuitarM from "./Media/Melody/2guitar_melody160.mp3";
-import twoKotoM from "./Media/Melody/2koto_melody160.mp3";
-import twoKotoTwoM from "./Media/Melody/2koto2_melody160.mp3";
-import twoLofiM from "./Media/Melody/2lofi_melody160.mp3";
-import twoPianoM from "./Media/Melody/2piano_melody160.mp3";
-import twoPianoTwoM from "./Media/Melody/2piano2_melody160.mp3";
-import twoTrapkotoM from "./Media/Melody/2trapkoto_melody.mp3";
-import funkM from "./Media/Melody/funk_melody.mp3";
-import pianoM from "./Media/Melody/piano_melody160.mp3";
-import pixM from "./Media/Melody/pix_melody160.mp3";
-import twoVocalBa from "./Media/Vocals/2ba_vocals160.mp3";
-import twoVocalIndig from "./Media/Vocals/2indig_melody.mp3";
-import twoVocalRun from "./Media/Vocals/2runaway_vocals.mp3";
+import twoBassB from "../Media/Backing/2bop_back160.mp3";
+import twoCoffeeB from "../Media/Beats/bongo_beat160.mp3";
+import twoFlourishB from "../Media/Backing/2sun_back.mp3";
+import amB from "../Media/Backing/am_back160.mp3";
+import funkB from "../Media/Backing/funk_back160.mp3";
+import oooB from "../Media/Backing/ooo_back160.mp3";
+import rockB from "../Media/Backing/rock_back160.mp3";
+import standB from "../Media/Backing/stand_back160.mp3";
+import bongoBt from "../Media/Beats/bongo_beat160.mp3";
+import bongoTwoBt from "../Media/Beats/bongo2_beat160.mp3";
+import clickBt from "../Media/Beats/click_beat160.mp3";
+import funkBt from "../Media/Beats/funk_beat160.mp3";
+import rockBt from "../Media/Beats/rock_beat160.mp3";
+import slowrockBt from "../Media/Beats/slowrock_beat160.mp3";
+import techBt from "../Media/Beats/tech_beat160.mp3";
+import twoAtmosM from "../Media/Melody/2atmos_melody160.mp3";
+import twoFunM from "../Media/Melody/2fun_melody.mp3";
+import twoGuitarM from "../Media/Melody/2guitar_melody160.mp3";
+import twoKotoM from "../Media/Melody/2koto_melody160.mp3";
+import twoKotoTwoM from "../Media/Melody/2koto2_melody160.mp3";
+import twoLofiM from "../Media/Melody/2lofi_melody160.mp3";
+import twoPianoM from "../Media/Melody/2piano_melody160.mp3";
+import twoPianoTwoM from "../Media/Melody/2piano2_melody160.mp3";
+import twoTrapkotoM from "../Media/Melody/2trapkoto_melody.mp3";
+import funkM from "../Media/Melody/funk_melody.mp3";
+import pianoM from "../Media/Melody/piano_melody160.mp3";
+import pixM from "../Media/Melody/pix_melody160.mp3";
+import twoVocalBa from "../Media/Vocals/2ba_vocals160.mp3";
+import twoVocalIndig from "../Media/Vocals/2indig_melody.mp3";
+import twoVocalRun from "../Media/Vocals/2runaway_vocals.mp3";
 
 class Contraption extends React.Component {
+  static contextType = ApiContext
     constructor(props) {
       super(props);
       this.state = {
@@ -52,7 +55,18 @@ class Contraption extends React.Component {
         groupTwoOneBeatFour: '...',
         groupThreeTwoBeatOne: '...',
         groupThreeTwoBeatTwo: '...',
-        sharable: false
+        sharable: 1
+      }
+    }
+
+    componentDidMount() {
+      let currentUserId = TokenService.getUserId()
+      let currentUserToken = TokenService.getAuthToken()
+      console.log(currentUserId, currentUserToken)
+      console.log(TokenService.hasAuthToken())
+
+      if (!TokenService.hasAuthToken()) {
+          window.location = '/'
       }
     }
 
@@ -137,7 +151,6 @@ class Contraption extends React.Component {
       if (this.state.toggle){
         this.setState({ pBtn: "Start" })
         console.log("transport stopped")
-        Tone.Transport.clear(buffer, buffer2, buffer3, buffer4, buffer5, buffer6, buffer7, buffer8)
         Tone.Transport.stop()
       }
       else if (this.state.toggle === false){
@@ -149,9 +162,10 @@ class Contraption extends React.Component {
 
     }
     handleSubmitAll = (e) => {
-      if (this.state.toggle === false){
+      // if (this.state.toggle === false){
         e.preventDefault();
-      }
+        console.log(Tone.ToneEvent._eventId)
+      // }
       //Tone.Transport.Toggle
       console.log("handle submit works");
 
@@ -162,9 +176,11 @@ class Contraption extends React.Component {
     }
 
     handleSave = (e) => {
+      let currentUserId = TokenService.getUserId()
       console.log(this.state)
       e.preventDefault();
       const music = {
+        user_id: currentUserId,
         song_name: this.state.songName,
         group_one_two_beat_one: this.state.groupOneTwoBeatOne,
         group_one_two_beat_two: this.state.groupOneTwoBeatTwo,
@@ -188,9 +204,9 @@ class Contraption extends React.Component {
           return res.json();
         })
         .then((mus) => {
-          this.context.addUser(mus);
+          this.context.addMusic(mus);
           this.props.history.push(`/api/music/${mus.id}`);
-          window.location = "/home";
+          window.location = `/loops/`;
         })
         .catch((error) => {
           console.error({ error });
@@ -384,12 +400,12 @@ class Contraption extends React.Component {
                   </div>
               </form>
 
-              <div className="saveButton">
+              {/* <div className="saveButton">
                     <form>
                       <input type="text" name="songName" onChange={(e) => this.handleChange(e)} />
                       <input type="submit" onClick={this.handleSave} className="save" value="Save" />
                     </form>
-              </div>
+              </div> */}
               <p>These are all form inputs, similar to when websites ask you to select your state, but these state selectors have a magical quality! They create music! Each long select box counts for eight notes or two bars and each short box counts for four notes or just one bar. Some combos will be good, some will grate on your ears. Create you're favorite combo and sa- ... well you can't save just yet (will implement soon), but I guess just savor the moment until you have to reload the page (which the stop button will do for you until I can figure out how to not have one million sounds play at once everytime you start up a stopped procedure).</p>
             </main>
           </div>
